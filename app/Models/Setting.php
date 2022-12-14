@@ -22,6 +22,7 @@ class Setting extends Model
         'maps',
         'wa_number',
         'wa_message',
-        'widget_book'
+        'widget_book',
+        'email_reciver'
     ];
 }

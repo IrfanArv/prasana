@@ -114,6 +114,11 @@
                                 <div class="form-body row">
                                     <div class="col-md-6">
                                         <div class="form-label-group">
+                                            <input name="email_reciver" value="{{ old('email_reciver', $settings->email_reciver) }}"
+                                                placeholder="Defalut Email Revicer" type="text" class="form-control" required>
+                                            <label>Defalut Email Revicer</label>
+                                        </div>
+                                        <div class="form-label-group">
                                             <input name="phone" value="{{ old('phone', $settings->phone) }}"
                                                 placeholder="Phone Number" type="text" class="form-control" required>
                                             <label>Phone</label>

@@ -97,6 +97,12 @@
                         class="menu-title">Reviews</span></a>
             </li>
             @endcan
+            @can('promotions')
+            <li class=" nav-item {{ Request::segment(2) === 'promotions' ? 'active' : null }}"><a
+                    href="{{ url('/dashboard/promotions') }}"><i class="feather icon-flag"></i><span
+                        class="menu-title">Promotions</span></a>
+            </li>
+            @endcan
 
             @can('users-list')
                 <li

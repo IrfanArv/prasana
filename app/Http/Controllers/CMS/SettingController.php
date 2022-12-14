@@ -37,6 +37,7 @@ class SettingController extends Controller
             'wa_number' => 'required',
             'wa_message' => 'required',
             'widget_book' => 'required',
+            'email_reciver' => 'required'
         ]);
 
         $input = [
@@ -53,6 +54,7 @@ class SettingController extends Controller
             'wa_number' => $request->wa_number,
             'wa_message' => $request->wa_message,
             'widget_book' => $request->widget_book,
+            'email_reciver' => $request->email_reciver,
         ];
         $settings = Setting::find($id);
         $settings->update($input);

@@ -13,6 +13,7 @@ use App\Http\Controllers\CMS\ProductController;
 use App\Http\Controllers\CMS\VillasController;
 use App\Http\Controllers\CMS\RatingController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\CMS\PromotionController;
 
 Route::get('/', [MainController::class, 'index']);
 Route::get('/our-villa', [MainController::class, 'listVilla']);
@@ -28,6 +29,7 @@ Route::get('/experience/{slug}', [MainController::class, 'detailExperience'])->n
 Route::get('/gallery', [MainController::class, 'gallery']);
 Route::get('/contact-us', [MainController::class, 'contact']);
 Route::post('/send-mail', [MainController::class, 'sendMail']);
+Route::get('/get-banner', [MainController::class, 'getBanner']);
 Auth::routes();
 
 Route::group([
@@ -101,6 +103,11 @@ Route::group([
     Route::post('/reviews/store', [RatingController::class, 'store']);
     Route::get('/reviews/edit/{id}', [RatingController::class, 'edit']);
     Route::get('/reviews/destroy/{id}', [RatingController::class, 'destroy']);
+    // promosi
+    Route::get('/promotions', [PromotionController::class, 'index']);
+    Route::post('/promotions/store', [PromotionController::class, 'store']);
+    Route::get('/promotions/edit/{id}', [PromotionController::class, 'edit']);
+    Route::get('/promotions/destroy/{id}', [PromotionController::class, 'destroy']);
 
 
 });

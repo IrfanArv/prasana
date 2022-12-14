@@ -23,7 +23,9 @@
             {!! $data->description !!}
         </div>
         <div class="d-flex justify-content-start my-5">
-            {!! $settings->widget_book !!}
+            <button type="button" class="btn btn-book-header shadow-none book-offer submitOffers" data-title="{!! $data->title !!}">
+                Book Now
+            </button>
         </div>
     </div>
     <div class="home-sliders mb-5">

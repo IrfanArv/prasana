@@ -15,10 +15,10 @@ class PermissionTableSeeder extends Seeder
     public function run()
     {
         $permissions = [
-            'ratings',
-            'ratings-create',
-            'ratings-edit',
-            'ratings-delete'
+            'promotions',
+            'promotions-create',
+            'promotions-edit',
+            'promotions-delete'
         ];
 
         foreach ($permissions as $permission) {

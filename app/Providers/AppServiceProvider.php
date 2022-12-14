@@ -6,7 +6,6 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Setting;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -30,7 +29,5 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*',function($view) {
             $view->with('settings', Setting::where('id',1)->first());
         });
-
-
     }
 }
