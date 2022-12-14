@@ -52,7 +52,7 @@
                                                     <td>
                                                         <div class="avatar mr-1 avatar-lg bg-transparent">
                                                             @if ($promotion->image)
-                                                                <img src="{{ asset('/img/user/' . $promotion->image) }}"
+                                                                <img src="{{ asset('/img/user'.'/' . $promotion->image) }}"
                                                                     alt="{{ $promotion->name }}">
                                                             @else
                                                                 <img src=https://dummyimage.com/240x250/A58639/fff.png&text=BANNER"
