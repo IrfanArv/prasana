@@ -11,6 +11,8 @@ use App\Models\FeatureVilla;
 use App\Models\ServiceVilla;
 use App\Models\Product;
 use App\Models\Experience;
+use Mail;
+use App\Mail\NotifyMail;
 
 class MainController extends Controller
 {
@@ -166,5 +168,20 @@ class MainController extends Controller
             'mainSlider' => $mainSlider,
             'mediaCollection' => $this->mediaCollection
         ]);
+    }
+
+    public function sendMail(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+        ]);
+        Mail::to('ir.irfan.arifin@gmail.com')->send(new NotifyMail());
+        if (Mail::failures()) {
+            return response()->json('Sorry! Please try again latter');
+       }else{
+            return response()->json('Great! Successfully send in your mail');
+          }
     }
 }

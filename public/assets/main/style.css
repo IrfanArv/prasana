@@ -47,6 +47,67 @@ form.row.form-subscribe {
     margin-left: 11rem;
 }
 
+.close-absolute {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(0%, -180%);
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #a97e11 !important;
+    outline: 0;
+    box-shadow: none!important;
+}
+label {
+    font-family: "Avenir-Light";
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: justify;
+    color: #828282;
+    margin-bottom: 10px;
+}
+
+input.form-control {
+    color: #828282;
+    border-radius: 8px;
+    font-family: "Avenir-Light";
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: justify;
+}
+
+textarea#additional {
+    color: #828282;
+    border-radius: 8px;
+    font-family: "Avenir-Light";
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: justify;
+}
+
+.modal-content.modal-offers {
+    border-radius: 8px;
+    border: none;
+    padding: 30px;
+}
+
+.modal-header.modal-offers {
+    display: block;
+}
+
+h4#title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    color: #a97e11;
+    text-decoration: none;
+}
+
 img.img-fluid.img-experience {
     width: 450px;
     height: 602px;
@@ -682,7 +743,7 @@ img.img-fluid.fit-slider {
 }
 
 .nav-link {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .navbar-expand-md .navbar-nav .dropdown-menu {
