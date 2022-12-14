@@ -2,7 +2,7 @@
     <nav id="header" class="navbar navbar-expand-md fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand ms-3" href="{{ url('/') }}" title="Prasana by Arjani Resort" rel="home">
-                <img id="logoimage" class="img-fluid" src="{{ '/img/whitelogo.svg' }}" alt="Prasana by Arjani Resort" />
+                <img id="logoimage" class="img-fluid" src="{{ asset('/img/whitelogo.svg') }}" alt="Prasana by Arjani Resort" />
             </a>
             <a href="https://www.book-secure.com/index.php?s=results&amp;property=idbal31631&amp;arrival=2022-08-22&amp;departure=2022-08-23&amp;adults1=2&amp;children1=0&amp;locale=en_GB&amp;currency=IDR&amp;stid=e3bukzedt&amp;arrivalDateValue=2022-08-22&amp;fromyear=2022&amp;frommonth=8&amp;fromday=22&amp;nbdays=2&amp;nbNightsValue=2&amp;redir=BIZ-so5523q0o4&amp;Clusternames=ASIAIDHTLPrasanaByAr&amp;rt=1661163722&amp;connectName=ASIAIDHTLPrasanaByAr&amp;cname=ASIAIDHTLPrasanaByAr&amp;Hotelnames=Asia-Id-Prasana-By-Arjani-Resorts&amp;hname=Asia-Id-Prasana-By-Arjani-Resorts&amp;cluster=ASIAIDHTLPrasanaByAr" target="_blank" class="btn btn-book-header-mobile d-block d-md-none">Book Now</a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
@@ -55,5 +55,5 @@
     </nav>
 </header>
 <a href="https://api.whatsapp.com/send?phone={{$settings->wa_number}}&text={{$settings->wa_message}}" class="float" target="_blank">
-    <img src="{{ '/img/wa.svg' }}">
+    <img src="{{ asset('/img/wa.svg') }}">
 </a>

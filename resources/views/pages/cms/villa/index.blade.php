@@ -65,7 +65,7 @@
                                                     <td class="text-center">
                                                         <div class="avatar mr-1 avatar-lg bg-transparent">
                                                             @if ($villa->image)
-                                                                <img src="{{ '/img/villas/' . $villa->image }}"
+                                                                <img src="{{ asset('/img/villas/' . $villa->image) }}"
                                                                     alt="{{ $villa->name }}">
                                                             @else
                                                                 <img src="https://dummyimage.com/100x100/fff/aaa"
@@ -81,7 +81,7 @@
                                                             @foreach ($villa->getMedia($mediaCollection)->take(2) as $media)
                                                                 <li class="avatar pull-up">
                                                                     <img class="media-object rounded-circle"
-                                                                        src="{{ $media->getUrl() }}"
+                                                                        src="{{ asset($media->getUrl()) }}"
                                                                         alt="{{ $media->getUrl() }}" height="30"
                                                                         width="30">
                                                                 </li>

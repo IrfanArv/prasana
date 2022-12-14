@@ -23,7 +23,7 @@
     <div class="main-sliders">
         <div class="sliders">
             @foreach ($mainSlider->getMedia($mediaCollection) as $media)
-                <img src="{{ $media->getUrl() }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
             @endforeach
         </div>
         <div class="slider-text-main">
@@ -31,7 +31,7 @@
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ '/img/scrol.svg' }}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
@@ -51,7 +51,7 @@
                 @foreach ($data as $item)
                     <div class="col-md-4 item-slide-experiece">
                         <div class="position-relative">
-                            <img src="{{ '/img/experience/' . $item->image }}" alt="{{ $item->title }}"
+                            <img src="{{ asset('/img/experience/' . $item->image) }}" alt="{{ $item->title }}"
                                 class="img-fluid img-experience pe-5">
                             <div class="title-inner @php if(strlen($item->title) >= 11) {echo 'experience-large';} @endphp">
                                 {!! $item->title !!}

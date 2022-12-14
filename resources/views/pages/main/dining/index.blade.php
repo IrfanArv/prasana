@@ -47,7 +47,7 @@
     <div class="main-sliders">
         <div class="sliders">
             @foreach ($mainSlider->getMedia($mediaCollection) as $media)
-                <img src="{{ $media->getUrl() }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
             @endforeach
         </div>
         <div class="slider-text-main">
@@ -55,7 +55,7 @@
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ '/img/scrol.svg' }}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
@@ -73,7 +73,7 @@
             </button>
             <div class="center-slider m-md-5 mt-5">
                 @foreach ($whim->getMedia($mediaCollection) as $media)
-                    <img src="{{ $media->getUrl() }}" class="img-fluid ms-md-5 me-md-5">
+                    <img src="{{ asset($media->getUrl()) }}" class="img-fluid ms-md-5 me-md-5">
                 @endforeach
             </div>
         </div>
@@ -82,7 +82,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="relative">
-                    <img src="{{ '/img/mask.png' }}" class="img-absolute img-fluid p-3" alt="Petit Garçon">
+                    <img src="{{ asset('/img/mask.png') }}" class="img-absolute img-fluid p-3" alt="Petit Garçon">
                 </div>
             </div>
             <div class="col-md-8 book-home p-5 d-flex flex-grow-1 justify-content-center align-items-center height-100">

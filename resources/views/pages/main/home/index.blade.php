@@ -6,7 +6,7 @@
     <div class="main-sliders">
         <div class="sliders">
             @foreach ($mainSlider->getMedia($mediaCollection) as $media)
-                <img src="{{ $media->getUrl() }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
             @endforeach
         </div>
         <div class="slider-text-main">
@@ -14,14 +14,14 @@
             <p class="animate__animated animate__fadeInUp animate__delay-1s">{{ $mainSlider->sub_title }}</p>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ '/img/scrol.svg' }}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
     <div class="container-fluid mt-md-5 welcome">
         <div class="row">
             <div class="col-md-6 p-0">
-                <img src="{{ '/img/welcome.png' }}" class="content-image-welcome img-fluid"
+                <img src="{{ asset('/img/welcome.png') }}" class="content-image-welcome img-fluid"
                     alt="welcome to prasana by arjani resort">
             </div>
             <div
@@ -82,7 +82,7 @@
                             </div>
                             <div class="col-md-6 order-first order-md-last">
                                 @if ($villa->image)
-                                    <img src="{{ '/img/villas/' . $villa->image }}" alt="{{ $villa->name }}"
+                                    <img src="{{ asset('/img/villas/' . $villa->image) }}" alt="{{ $villa->name }}"
                                         class="img-fluid img-villa-home pe-1">
                                 @endif
                             </div>
@@ -95,7 +95,7 @@
 
     <div class="home-sliders">
         @foreach ($homeSlider->getMedia($mediaCollection) as $media)
-            <img src="{{ $media->getUrl() }}" class="img-fluid image-two-column">
+            <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
         @endforeach
     </div>
 
@@ -116,7 +116,7 @@
                             </p>
                             <div class="user-comment">
                                 @if ($rating->image)
-                                    <img src="{{ '/img/user/' . $rating->image }}" alt="{{ $rating->name }}"
+                                    <img src="{{ asset('/img/user/' . $rating->image) }}" alt="{{ $rating->name }}"
                                         class="rounded-circle avatar">
                                 @endif
                                 <div class="user-name">
@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="col-md-4 px-4 px-md-3">
-                <img src="{{ '/img/kutip.svg' }}" class="img-fluid" alt="welcome to prasana by arjani resort">
+                <img src="{{ asset('/img/kutip.svg') }}" class="img-fluid" alt="welcome to prasana by arjani resort">
                 <div class="quotes-home">
                     The Best And Recommended Places
                 </div>
@@ -158,7 +158,7 @@
             <div class="col-md-8 mb-5">
                 <div class="slide-gallery">
                     @foreach ($slide->getMedia($mediaCollection) as $media)
-                        <img src="{{ $media->getUrl() }}" class="img-fluid">
+                        <img src="{{ asset($media->getUrl()) }}" class="img-fluid">
                     @endforeach
                 </div>
             </div>
@@ -184,13 +184,13 @@
                     </div>
                     <ul class="sosmed">
                         <li> <a href="{!! $settings->facebook !!}" class="btn btn-sosmed" target="_blank"
-                                rel="noopener noreferrer"> <img src="{{ '/img/fb.svg' }}" class="img-fluid"
+                                rel="noopener noreferrer"> <img src="{{ asset('/img/fb.svg' )}}" class="img-fluid"
                                     alt="Facebook"> </a></li>
                         <li> <a href="{!! $settings->instagram !!}" class="btn btn-sosmed" target="_blank"
-                                rel="noopener noreferrer"> <img src="{{ '/img/ig.svg' }}" class="img-fluid"
+                                rel="noopener noreferrer"> <img src="{{ asset('/img/ig.svg') }}" class="img-fluid"
                                     alt="Instagram"></a></li>
                         <li> <a href="{!! $settings->gplus !!}" class="btn btn-sosmed" target="_blank"
-                                rel="noopener noreferrer"> <img src="{{ '/img/gp.svg' }}" class="img-fluid"
+                                rel="noopener noreferrer"> <img src="{{ asset('/img/gp.svg') }}" class="img-fluid"
                                     alt="Google"></a></li>
                     </ul>
                 </div>

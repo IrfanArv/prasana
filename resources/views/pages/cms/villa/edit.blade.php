@@ -55,7 +55,7 @@
                                                     <div class="col-auto">
                                                         @if ($villa->image)
                                                             <img class="img-fluid rounded" id="modal-preview"
-                                                                src="{{ '/img/villas/' . $villa->image }}"><br><br>
+                                                                src="{{ asset('/img/villas/' . $villa->image) }}"><br><br>
                                                         @else
                                                             <img class="img-fluid rounded" id="modal-preview"
                                                                 src="https://dummyimage.com/1000x250/A58639/fff.png&text=IMAGES"><br><br>

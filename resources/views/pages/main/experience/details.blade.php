@@ -6,14 +6,14 @@
 @section('content')
     <div class="main-sliders">
         <div class="sliders">
-            <img src="{{ '/img/experience/' . $data->image }}" alt="{{ $data->title }}" class="img-fluid fit-slider">
+            <img src="{{ asset('/img/experience/' . $data->image) }}" alt="{{ $data->title }}" class="img-fluid fit-slider">
         </div>
         <div class="slider-text-main @php if(strlen($data->title) >= 23) {echo 'left-long';} @endphp">
             <p class="animate__animated animate__fadeInUp">Experience</p>
             <h1 class="animate__animated animate__fadeInLeft"> {!! $data->title !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ '/img/scrol.svg' }}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
@@ -26,7 +26,7 @@
     </div>
     <div class="home-sliders mb-5">
         @foreach ($data->getMedia($mediaCollection) as $media)
-            <img src="{{ $media->getUrl() }}" class="img-fluid image-two-column">
+            <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
         @endforeach
     </div>
 @endsection

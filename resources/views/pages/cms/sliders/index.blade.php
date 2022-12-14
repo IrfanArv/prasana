@@ -66,7 +66,7 @@
                                                             @foreach ($slider->getMedia($mediaCollection) as $media)
                                                                 <li class="avatar pull-up">
                                                                     <img class="media-object rounded-circle"
-                                                                        src="{{ $media->getUrl() }}"
+                                                                        src="{{ asset($media->getUrl()) }}"
                                                                         alt="{{ $media->getUrl() }}" height="30"
                                                                         width="30">
                                                                 </li>

@@ -62,7 +62,7 @@
                                                     @if ($product->image)
                                                         <td class="text-center">
                                                             <div class="avatar mr-1 avatar-lg bg-transparent">
-                                                                <img src="{{ '/img/products/' . $product->image }}"
+                                                                <img src="{{ asset('/img/products/' . $product->image) }}"
                                                                     alt="{{ $product->title }}">
                                                             </div>
                                                         </td>
@@ -73,7 +73,7 @@
                                                             @foreach ($product->getMedia($mediaCollection)->take(2) as $media)
                                                                 <li class="avatar pull-up">
                                                                     <img class="media-object rounded-circle"
-                                                                        src="{{ $media->getUrl() }}"
+                                                                        src="{{ asset($media->getUrl()) }}"
                                                                         alt="{{ $media->getUrl() }}" height="30"
                                                                         width="30">
                                                                 </li>

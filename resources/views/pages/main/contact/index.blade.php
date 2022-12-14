@@ -8,7 +8,7 @@
     <div class="main-sliders">
         <div class="sliders">
             @foreach ($mainSlider->getMedia($mediaCollection) as $media)
-                <img src="{{ $media->getUrl() }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
             @endforeach
         </div>
         <div class="slider-text-main">
@@ -16,7 +16,7 @@
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ '/img/scrol.svg' }}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div> 
@@ -48,9 +48,9 @@
                         Follow Us
                     </div>
                     <ul class="sosmed">
-                        <li> <a href="{!! $settings->facebook !!}" class="btn btn-sosmed" target="_blank" rel="noopener noreferrer"> <img src="{{ '/img/fb.svg' }}" class="img-fluid" alt="Facebook"> </a></li>
-                        <li> <a href="{!! $settings->instagram !!}" class="btn btn-sosmed" target="_blank" rel="noopener noreferrer"> <img src="{{ '/img/ig.svg' }}" class="img-fluid" alt="Instagram"></a></li>
-                        <li> <a href="{!! $settings->gplus !!}" class="btn btn-sosmed" target="_blank" rel="noopener noreferrer"> <img src="{{ '/img/gp.svg' }}" class="img-fluid" alt="Google"></a></li>
+                        <li> <a href="{!! $settings->facebook !!}" class="btn btn-sosmed" target="_blank" rel="noopener noreferrer"> <img src="{{ asset('/img/fb.svg') }}" class="img-fluid" alt="Facebook"> </a></li>
+                        <li> <a href="{!! $settings->instagram !!}" class="btn btn-sosmed" target="_blank" rel="noopener noreferrer"> <img src="{{ asset('/img/ig.svg') }}" class="img-fluid" alt="Instagram"></a></li>
+                        <li> <a href="{!! $settings->gplus !!}" class="btn btn-sosmed" target="_blank" rel="noopener noreferrer"> <img src="{{ asset('/img/gp.svg') }}" class="img-fluid" alt="Google"></a></li>
                     </ul>
                 </div>
             </div>
