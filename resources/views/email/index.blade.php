@@ -24,7 +24,7 @@
     <!--<![endif]-->
 
     <!-- Your title goes here -->
-    <title>Newsletter</title>
+    <title>New Booking Package </title>
     <!-- End title -->
 
     <!-- Start stylesheet -->
@@ -99,7 +99,7 @@
                         <!-- Your logo is here -->
                         <img style="width: 82px; max-width: 82px; height: 64px; max-height: 64px; text-align: center; color: #ffffff;"
                             alt="Logo"
-                            src="http://103.153.61.66/prasana/public/img/whitelogo.svg"
+                            src="https://prasanabyarjaniresorts.com/wp-content/themes/prasana-villas/assets/images/logo.png"
                             align="center" width="82" height="64">
 
                     </td>
@@ -110,7 +110,7 @@
 
         <!-- Start single column section -->
         <table align="center"
-            style="text-align: center; vertical-align: top; width: 600px; max-width: 600px; background-color: #ffffff;"
+            style="text-align: left; vertical-align: top; width: 600px; max-width: 600px; background-color: #ffffff;"
             width="600">
             <tbody>
                 <tr>
@@ -119,18 +119,38 @@
 
                         <h1
                             style="font-size: 20px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; text-decoration: none; color: #000000;">
-                            Prasana by Arjani Resorts</h1>
+                            New Booking {{ $input['booking_value'] }} </h1>
+
+                        <h1
+                            style="font-size: 20px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; text-decoration: none; color: #000000;">
+                            From</h1>
+
 
                         <p
                             style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis ante sed imperdiet
-                            euismod. Vivamus fermentum bibendum turpis, et tempor dui. Sed vitae lectus egestas, finibus
-                            purus ac, rutrum mauris.</p>
-                            <!--[if mso]>
+                            {{ $input['name'] }}
+                        </p>
+                        <p
+                            style="font-size: 15px; line-height: 10px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            {{ $input['email'] }}
+                        </p>
+                        <p
+                            style="font-size: 15px; line-height: 10px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            {{ $input['phone'] }}
+                        </p>
+                        <p
+                            style="font-size: 15px; line-height: 50px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            Additional Request:
+                        </p>
+                        <p
+                            style="font-size: 15px; line-height: 50px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            {{ $input['additional'] }}
+                        </p>
+                        <!--[if mso]>
                   <i style="letter-spacing: 25px; mso-font-width: -100%; mso-text-raise: 30pt;">&nbsp;</i>
                 <![endif]-->
 
-                            <!--[if mso]>
+                        <!--[if mso]>
                   <i style="letter-spacing: 25px; mso-font-width: -100%;">&nbsp;</i>
                 <![endif]-->
                         </a>
@@ -140,99 +160,6 @@
                 </tr>
             </tbody>
         </table>
-        <!-- End single column section -->
-
-        <!-- End image -->
-
-        <!-- Start heading for double column section -->
-        <table align="center"
-            style="text-align: center; vertical-align: top; width: 600px; max-width: 600px; background-color: #ffffff;"
-            width="600">
-            <tbody>
-                <tr>
-                    <td style="width: 596px; vertical-align: top; padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 0;"
-                        width="596">
-
-                        <h1
-                            style="font-size: 20px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; text-decoration: none; color: #000000; margin-bottom: 0;">
-                            Double column, dolor sit amet</h1>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- End heading for double column section -->
-
-        <!-- Start double column section -->
-        <table align="center"
-            style="text-align: center; vertical-align: top; width: 600px; max-width: 600px; background-color: #ffffff;"
-            width="600">
-            <tbody>
-                <tr>
-                    <td style="width: 252px; vertical-align: top; padding-left: 30px; padding-right: 15px; padding-top: 0; padding-bottom: 30px; text-align: center;"
-                        width="252">
-
-                        <p
-                            style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
-                            Vivamus felis velit, iaculis eu eros sed, consequat viverra libero. Aliquam ipsum eros,
-                            imperdiet eget fermentum eget, cursus a sapien.</p>
-
-                    </td>
-
-                    <td style="width: 252px; vertical-align: top; padding-left: 15px; padding-right: 30px; padding-top: 0; padding-bottom: 30px; text-align: center;"
-                        width="252">
-                        <p
-                            style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
-                            Pellentesque mollis bibendum sollicitudin. Aenean tempor eros at risus mollis gravida.
-                            Aenean in urna eget elit pretium ultrices eu vitae elit.</p>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- End double column section -->
-
-        <!-- Start image -->
-        <img style="width: 600px; max-width: 600px; height: 240px; max-height: 240px; text-align: center;"
-            alt="Image" src="https://fullsphere.co.uk/misc/free-template/images/image-3.jpg" align="center"
-            width="600" height="240">
-        <!-- End image -->
-
-        <!-- Start footer -->
-        <table align="center"
-            style="text-align: center; vertical-align: top; width: 600px; max-width: 600px; background-color: #000000;"
-            width="600">
-            <tbody>
-                <tr>
-                    <td style="width: 596px; vertical-align: top; padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 30px;"
-                        width="596">
-
-                        <!-- Your inverted logo is here -->
-                        <img style="width: 82px; max-width: 82px; height: 64px; max-height: 64px; text-align: center; color: #ffffff;"
-                            alt="Logo"
-                            src="https://fullsphere.co.uk/misc/free-template/images/logo-black-background.jpg"
-                            align="center" width="180" height="85">
-
-                        <p
-                            style="font-size: 13px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #ffffff;">
-                            Address line 1, London, L2 4LN
-                        </p>
-
-                        <p
-                            style="margin-bottom: 0; font-size: 13px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #ffffff;">
-                            <a target="_blank" style="text-decoration: underline; color: #ffffff;"
-                                href="https://fullsphere.co.uk">
-                                www.fullsphere.co.uk
-                            </a>
-                        </p>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- End footer -->
-
-        <!-- Start unsubscribe section -->
         <table align="center" style="text-align: center; vertical-align: top; width: 600px; max-width: 600px;"
             width="600">
             <tbody>
@@ -242,27 +169,14 @@
 
                         <p
                             style="font-size: 12px; line-height: 12px; font-family: 'Helvetica', Arial, sans-serif; font-weight: normal; text-decoration: none; color: #000000;">
-                            Not wanting to receive these emails?
+                            This Email Generate on website Prasana by Arjani Resorts
                         </p>
 
-                        <p
-                            style="font-size: 12px; line-height: 12px; font-family: 'Helvetica', Arial, sans-serif; font-weight: normal; text-decoration: none; color: #000000;">
-                            You can <a style="text-decoration: underline; color: #000000;"
-                                href="insert-unsubscribe-link-here"><u>unsubscribe here</u></a>
-                        </p>
-
-                        <p
-                            style="font-size: 12px; line-height: 12px; font-family: 'Helvetica', Arial, sans-serif; font-weight: normal; text-decoration: none; color: #919293; margin-top: 30px;">
-                            Email template built by <a style="text-decoration: none; color: #919293;"
-                                href="https://fullsphere.co.uk"><u>FullSphere</u></a>
-                        </p>
 
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- End unsubscribe section -->
-
     </div>
 
 </body>

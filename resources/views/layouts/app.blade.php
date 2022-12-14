@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script defer src="{{ asset('assets/main/main.js') }}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
@@ -55,18 +56,19 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label>Full Name </label>
+                                <input type="hidden" name="booking_value" id="booking_value">
                                 <input id="name" name="name" type="text" placeholder="Full Name"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                             <div class="form-group col-md-12 mt-3">
                                 <label>Email </label>
                                 <input id="email" name="email" type="text" placeholder="Email"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                             <div class="form-group col-md-12 mt-3">
                                 <label>Phone </label>
                                 <input id="phone" name="phone" type="number" placeholder="Phone"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                             <div class="form-group col-md-12 mt-3">
                                 <label>Additional Request </label>
@@ -82,6 +84,49 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="promotion" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content modal-transparent">
+                <div class="modal-body" id="content-promosi">
+                    <button type="button" class="btn-close shadow-none float-end" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <a href="" class="btn btn-transparent shadow-none" id="urls-banner" target="_blank"
+                        rel="noopener noreferrer">
+                        <img class="img-fluid rounded" id="modal-image" src="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- kirim --}}
+    <div class="modal fade" id="sending" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_txpagpud.json"
+                        background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- berhasil --}}
+    <div class="modal fade" id="done" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_pqnfmone.json"
+                        background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -90,6 +135,7 @@
     <script type="text/javascript">
         AOS.init();
         var SITEURL = '{{ URL::to('') }}';
+        var SEGMENT = '{{ Request::segment(1) }}';
         $(document).ready(function() {
             $.ajaxSetup({
                 headers: {
@@ -98,11 +144,35 @@
             });
             $('.submitOffers').click(function() {
                 var title = $(this).data('title');
+                $('#booking_value').val(title);
                 $('#btn-save').val("send-submit");
                 $('#title').html('BOOK ' + title);
-                $('#formOffers').trigger("reset");
                 $('#modalSubmit').modal('show');
             });
+
+            $.ajax({
+                type: "get",
+                url: SITEURL + "/get-banner",
+                success: function(data) {
+                    var posisi = data.data.position;
+                    var loadUrl = ''
+                    if (posisi === 'home') {
+                        loadUrl = ''
+                    } else {
+                        loadUrl = posisi
+                    }
+                    if (loadUrl === SEGMENT) {
+                        $('#promotion').modal('show');
+                        $('#urls-banner').attr('href', data.data.urls);
+                        $('#modal-image').attr('src', '{{ URL::to('/img/user') }}' + '/' + data.data
+                            .image);
+                    }
+                },
+                error: function(data) {
+                    console.log('Error:', data);
+                }
+            });
+
         });
         $('body').on('submit', '#formOffers', function(e) {
             e.preventDefault();
@@ -116,15 +186,19 @@
                 cache: false,
                 contentType: false,
                 processData: false,
-                success: (data) => {
+                beforeSend: function() {
+                    $('#sending').modal('show');
                     $('#formOffers').trigger("reset");
                     $('#modalSubmit').modal('hide');
-                    console.log(data);
                 },
-                error: function(data) {
-                    console.log('Error:', data);
-                    $('#btn-save').html('Save Changes');
-                }
+                success: (data) => {
+                    $('#sending').modal('hide');
+                    $('#formOffers').trigger("reset");
+                    $("#done").modal("show");
+                    setTimeout(function() {
+                        $("#done").modal("hide");
+                    }, 3000);
+                },
             });
         });
     </script>

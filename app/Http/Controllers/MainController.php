@@ -13,10 +13,18 @@ use App\Models\Product;
 use App\Models\Experience;
 use Mail;
 use App\Mail\NotifyMail;
+use App\Models\Promotion;
+use App\Models\Setting;
 
 class MainController extends Controller
 {
     private $mediaCollection = 'photo';
+
+    public function getBanner()
+    {
+        $promosi = Promotion::where('status', 'active')->first();
+        return response()->json(['data' => $promosi]);
+    }
 
     // HOME
     public function index()
@@ -36,6 +44,7 @@ class MainController extends Controller
             'gallery'           => $gallery,
             'mediaCollection'   => $this->mediaCollection
         ]);
+
     }
 
     // VILLA
@@ -167,21 +176,24 @@ class MainController extends Controller
         return view('pages.main.contact.index', [
             'mainSlider' => $mainSlider,
             'mediaCollection' => $this->mediaCollection
-        ]);
+        ]); 
     }
 
     public function sendMail(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-        ]);
-        Mail::to('ir.irfan.arifin@gmail.com')->send(new NotifyMail());
+        $setting = Setting::where('id', 1)->first();
+        $input = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'additional' => $request->additional,
+            'booking_value' => $request->booking_value
+        ];
+        Mail::to($setting->email_reciver)->send(new NotifyMail($input));
         if (Mail::failures()) {
-            return response()->json('Sorry! Please try again latter');
+            return response()->json('Failed');
        }else{
-            return response()->json('Great! Successfully send in your mail');
+            return response()->json('Done');
           }
     }
 }

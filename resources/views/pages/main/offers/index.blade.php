@@ -38,7 +38,9 @@
                                         class="btn btn-full-info">Full Info <i class="fas fa-chevron-right"></i></a>
                                 </div>
                                 <div class="col-md-6 d-flex justify-content-md-end justify-content-center my-md-0 my-3 p-0 pe-md-3">
-                                    <a href="#" class="btn btn-book-header">Book Now</a>
+                                    <button type="button" class="btn btn-book-header shadow-none book-offer submitOffers" data-title="{!! $item->title !!}">
+                                        Book Now
+                                    </button>
                                 </div>
                             </div>
                         </div>
