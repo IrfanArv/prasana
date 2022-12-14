@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-md-6 @php if($villa->id%2==0){ echo 'order-md-2';} @endphp">
                             @if ($villa->image)
-                                <img src="{{ asset('/img/villas/') . $villa->image }}" alt="{{ $villa->name }}" class="img-fluid">
+                                <img src="{{ asset('/img/villas').'/' . $villa->image }}" alt="{{ $villa->name }}" class="img-fluid">
                             @endif
                         </div>
                         <div class="col-md-6 p-md-5 p-3 d-flex flex-grow-1 justify-content-center align-items-center">
@@ -73,7 +73,6 @@
                 autoplay: true,
                 autoplaySpeed: 8000,
                 arrow: false
-
             });
         });
     </script>
