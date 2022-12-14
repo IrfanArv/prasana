@@ -27,6 +27,7 @@ Route::get('/experience', [MainController::class, 'experience']);
 Route::get('/experience/{slug}', [MainController::class, 'detailExperience'])->name('experience.detail');
 Route::get('/gallery', [MainController::class, 'gallery']);
 Route::get('/contact-us', [MainController::class, 'contact']);
+Route::post('/send-mail', [MainController::class, 'sendMail']);
 Auth::routes();
 
 Route::group([
