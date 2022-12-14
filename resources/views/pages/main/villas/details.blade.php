@@ -6,14 +6,14 @@
 @section('content')
     <div class="main-sliders">
         <div class="sliders">
-            <img src="{{ '/img/villas/' . $data->image }}" alt="{{ $data->name }}" class="img-fluid fit-slider">
+            <img src="{{ asset('/img/villas/' . $data->image) }}" alt="{{ $data->name }}" class="img-fluid fit-slider">
         </div>
         <div class="slider-text-main">
             <p class="animate__animated animate__fadeInUp">Villas</p>
             <h1 class="animate__animated animate__fadeInLeft"> {!! $data->name !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ '/img/scrol.svg' }}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
@@ -21,9 +21,9 @@
         <div class="content-greeting">
             <h3>{!! $data->name !!}</h3>
             <div class="icon-villa mb-md-3">
-                <img src="{{ '/img/person.svg' }}" class="img-fluid me-2">
+                <img src="{{ asset('/img/person.svg' )}}" class="img-fluid me-2">
                 <p> {!! $data->capacity !!} Guest</p>
-                <img src="{{ '/img/area.svg' }}" class="img-fluid me-2 ms-3">
+                <img src="{{ asset('/img/area.svg') }}" class="img-fluid me-2 ms-3">
                 <p> {!! $data->building_area !!} sqm</p>
             </div>
             {!! $data->description !!}
@@ -60,7 +60,7 @@
     </div>
     <div class="home-sliders mb-5">
         @foreach ($data->getMedia($mediaCollection) as $media)
-            <img src="{{ $media->getUrl() }}" class="img-fluid image-two-column">
+            <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
         @endforeach
     </div>
 @endsection

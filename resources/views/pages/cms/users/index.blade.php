@@ -63,7 +63,7 @@
                                                     <td class="text-center">
                                                         <div class="avatar mr-1 avatar-lg bg-transparent">
                                                             @if ($user->image)
-                                                                <img src="{{ '/img/user/' . $user->image }}"
+                                                                <img src="{{ asset('/img/user/' . $user->image) }}"
                                                                     alt="{{ $user->name }}">
                                                             @else
                                                                 <img src="https://avatars.dicebear.com/api/adventurer/:jhone.svg"

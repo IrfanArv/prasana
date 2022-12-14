@@ -63,7 +63,7 @@
                                                     @if ($experience->image)
                                                         <td class="text-center">
                                                             <div class="avatar mr-1 avatar-lg bg-transparent">
-                                                                <img src="{{ '/img/experience/' . $experience->image }}" alt="{{ $experience->title }}">
+                                                                <img src="{{ asset('/img/experience/' . $experience->image) }}" alt="{{ $experience->title }}">
                                                             </div>
                                                         </td>
                                                     @endif
@@ -74,7 +74,7 @@
                                                             @foreach ($experience->getMedia($mediaCollection)->take(2) as $media)
                                                                 <li class="avatar pull-up">
                                                                     <img class="media-object rounded-circle"
-                                                                        src="{{ $media->getUrl() }}"
+                                                                        src="{{ asset($media->getUrl()) }}"
                                                                         alt="{{ $media->getUrl() }}" height="30"
                                                                         width="30">
                                                                 </li>

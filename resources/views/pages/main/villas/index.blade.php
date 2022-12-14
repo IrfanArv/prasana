@@ -8,7 +8,7 @@
     <div class="main-sliders">
         <div class="sliders">
             @foreach ($mainSlider->getMedia($mediaCollection) as $media)
-                <img src="{{ $media->getUrl() }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid fit-slider" alt="{{ $mainSlider->title }}">
             @endforeach
         </div>
         <div class="slider-text-main">
@@ -16,7 +16,7 @@
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ '/img/scrol.svg' }}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-md-6 @php if($villa->id%2==0){ echo 'order-md-2';} @endphp">
                             @if ($villa->image)
-                                <img src="{{ '/img/villas/' . $villa->image }}" alt="{{ $villa->name }}" class="img-fluid">
+                                <img src="{{ asset('/img/villas/') . $villa->image }}" alt="{{ $villa->name }}" class="img-fluid">
                             @endif
                         </div>
                         <div class="col-md-6 p-md-5 p-3 d-flex flex-grow-1 justify-content-center align-items-center">
@@ -40,9 +40,9 @@
                                     {!! $villa->name !!}</h3>
                                 <div
                                     class="icon-villa d-flex p-0 @php if($villa->id%2==0){echo 'justify-content-md-end';}else{echo 'justify-content-md-start';} @endphp">
-                                    <img src="{{ '/img/person.svg' }}" class="img-fluid me-2">
+                                    <img src="{{ asset('/img/person.svg') }}" class="img-fluid me-2">
                                     <p> {!! $villa->capacity !!} Guest</p>
-                                    <img src="{{ '/img/area.svg' }}" class="img-fluid me-2 ms-3">
+                                    <img src="{{ asset('/img/area.svg') }}" class="img-fluid me-2 ms-3">
                                     <p> {!! $villa->building_area !!} sqm</p>
                                 </div>
                                 {!! $villa->description !!}

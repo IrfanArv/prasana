@@ -160,7 +160,7 @@
                                                     <td>
                                                         <div class="avatar mr-1 avatar-lg bg-transparent">
                                                             @if ($rating->image)
-                                                                <img src="{{ '/img/user/' . $rating->image }}"
+                                                                <img src="{{ asset('/img/user/' . $rating->image) }}"
                                                                     alt="{{ $rating->name }}">
                                                             @else
                                                                 <img src="https://avatars.dicebear.com/api/adventurer/:jhone.svg"

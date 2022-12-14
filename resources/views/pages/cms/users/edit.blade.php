@@ -53,7 +53,7 @@
                                             <div class="col-auto">
                                                 @if ($user->image)
                                                     <img class="avatar" id="modal-preview"
-                                                        src="{{ '/img/user/' . $user->image }}"
+                                                        src="{{ asset('/img/user/' . $user->image) }}"
                                                         alt="{{ $user->name }}"><br><br>
                                                 @else
                                                     <img class="avatar" id="modal-preview"

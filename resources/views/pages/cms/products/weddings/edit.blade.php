@@ -56,7 +56,7 @@
                                                     <div class="col-auto">
                                                         @if ($data->image)
                                                             <img class="img-fluid rounded" id="modal-preview"
-                                                                src="{{ '/img/products/' . $data->image }}"><br><br>
+                                                                src="{{ asset('/img/products/' . $data->image) }}"><br><br>
                                                         @else
                                                             <img class="img-fluid rounded" id="modal-preview"
                                                                 src="https://dummyimage.com/1000x250/A58639/fff.png&text=IMAGES"><br><br>
