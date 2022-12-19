@@ -52,7 +52,7 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-12 px-3">
-                                                <div class="row mb-2">
+                                                <div class="row mb-2 d-flex justify-content-center">
                                                     <div class="col-auto">
                                                         @if ($data->image)
                                                             <img class="img-fluid rounded" id="modal-preview"
@@ -105,6 +105,23 @@
                                                     </div>
                                                     <div class="col-md-8">
                                                         <div class="needsclick dropzone" id="document-dropzone"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Send to</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select class="form-control" name="send_to" id="send_to">
+                                                            @if (old('send_to', $data->send_to) === 'wa')
+                                                                <option value="wa" selected>WhatsApp</option>
+                                                                <option value="email">Email</option>
+                                                            @endif
+                                                            @if (old('send_to', $data->send_to) === 'email')
+                                                                <option value="wa">WhatsApp</option>
+                                                                <option value="email" selected>Email</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <h4 class="content-header-title float-left mb-0">Meta Tags</h4>

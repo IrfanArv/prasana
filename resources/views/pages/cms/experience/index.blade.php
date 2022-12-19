@@ -63,11 +63,12 @@
                                                     @if ($experience->image)
                                                         <td class="text-center">
                                                             <div class="avatar mr-1 avatar-lg bg-transparent">
-                                                                <img src="{{ asset('/img/experience/' . $experience->image) }}" alt="{{ $experience->title }}">
+                                                                <img src="{{ asset('/img/experience/' . $experience->image) }}"
+                                                                    alt="{{ $experience->title }}">
                                                             </div>
                                                         </td>
                                                     @endif
-                                                    <td>{{ $experience->title }}</td>
+                                                    <td>{!! $experience->title !!}</td>
                                                     <td>{{ $experience->location }}</td>
                                                     <td class="p-1">
                                                         <ul class="list-unstyled users-list m-0  d-flex align-items-center">
@@ -91,7 +92,8 @@
                                                         @endcan
                                                         @can('experience-delete')
                                                             <button type="button" id="delete-experience"
-                                                                data-id="{{ $experience->id }}" data-name="{{ $experience->title }}"
+                                                                data-id="{{ $experience->id }}"
+                                                                data-name="{{ $experience->title }}"
                                                                 class="btn btn-outline-danger round mr-1 mb-1 waves-effect waves-light">Delete</button>
                                                         @endcan
                                                     </td>

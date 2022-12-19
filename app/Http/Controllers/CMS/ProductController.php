@@ -55,7 +55,7 @@ class ProductController extends Controller
             'type' => 'required',
             'slug' => 'required',
             'description' => 'required',
-            'image' => 'required'
+            'image' => 'required',
         ]);
         if ($request->hasFile('image')) {
             $imageName = date('YmdHis') . "." . $request->image->getClientOriginalExtension();
@@ -69,6 +69,7 @@ class ProductController extends Controller
                 'meta_title' => $request->meta_title,
                 'meta_desc' => $request->meta_desc,
                 'meta_keyword' => $request->meta_keyword,
+                'send_to' => $request->send_to,
                 'image' => date('YmdHis') . "." . $request->image->getClientOriginalExtension()
             ];
         } else {
@@ -79,6 +80,7 @@ class ProductController extends Controller
                 'description' => $request->description,
                 'meta_title' => $request->meta_title,
                 'meta_desc' => $request->meta_desc,
+                'send_to' => $request->send_to,
                 'meta_keyword' => $request->meta_keyword,
             ];
         }
@@ -146,6 +148,7 @@ class ProductController extends Controller
                 'meta_title' => $request->meta_title,
                 'meta_desc' => $request->meta_desc,
                 'meta_keyword' => $request->meta_keyword,
+                'send_to' => $request->send_to,
                 'image' => date('YmdHis') . "." . $request->image->getClientOriginalExtension()
             ]);
         } else {
@@ -156,6 +159,7 @@ class ProductController extends Controller
                 'description' => $request->description,
                 'meta_title' => $request->meta_title,
                 'meta_desc' => $request->meta_desc,
+                'send_to' => $request->send_to,
                 'meta_keyword' => $request->meta_keyword,
             ]);
         }

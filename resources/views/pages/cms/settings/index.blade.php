@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="mb-2">General Meta Tags</h4>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="mb-2">WhatsApp Floating</h4>
@@ -104,6 +104,29 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-2">Receiver Messages</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <div class="form-label-group">
+                                        <input name="email_reciver" value="{{ old('email_reciver', $settings->email_reciver) }}"
+                                            placeholder="Email Revicer" type="text" class="form-control" required>
+                                        <label>Email Receiver</label>
+                                    </div>
+                                    <div class="form-label-group">
+                                        <input name="wa_reciver" value="{{ old('wa_reciver', $settings->wa_reciver) }}"
+                                            placeholder="WhatsApp Revicer" type="text" class="form-control" required>
+                                        <label>WhatsApp Receiver</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -113,11 +136,6 @@
                             <div class="card-body">
                                 <div class="form-body row">
                                     <div class="col-md-6">
-                                        <div class="form-label-group">
-                                            <input name="email_reciver" value="{{ old('email_reciver', $settings->email_reciver) }}"
-                                                placeholder="Defalut Email Revicer" type="text" class="form-control" required>
-                                            <label>Defalut Email Revicer</label>
-                                        </div>
                                         <div class="form-label-group">
                                             <input name="phone" value="{{ old('phone', $settings->phone) }}"
                                                 placeholder="Phone Number" type="text" class="form-control" required>

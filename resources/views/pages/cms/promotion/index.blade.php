@@ -1,7 +1,7 @@
 @extends('layouts.cms')
 @section('title', 'Promotions Banner')
 @section('content')
-   
+
     </style>
     <div class="content-wrapper">
         <div class="content-header row">
@@ -52,7 +52,7 @@
                                                     <td>
                                                         <div class="avatar mr-1 avatar-lg bg-transparent">
                                                             @if ($promotion->image)
-                                                                <img src="{{ asset('/img/user'.'/' . $promotion->image) }}"
+                                                                <img src="{{ asset('/img/user' . '/' . $promotion->image) }}"
                                                                     alt="{{ $promotion->name }}">
                                                             @else
                                                                 <img src=https://dummyimage.com/240x250/A58639/fff.png&text=BANNER"
@@ -128,8 +128,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Urls </label>
-                                <input id="urls" name="urls" type="text" placeholder="Url"
-                                    class="form-control">
+                                <input id="urls" name="urls" type="text" placeholder="Url" class="form-control">
                             </div>
                             <div class="form-group col-md-12">
                                 <select class="form-control" name="position" id="position">
@@ -153,7 +152,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btn-save" value="create">Create</button>
+                        <button type="submit" class="btn btn-primary" id="btn-save" value="create">Submit</button>
                     </div>
                 </form>
             </div>
@@ -188,8 +187,10 @@
                         $('#status').val(data.status);
                         $('#modal-preview').attr('alt', 'No image available');
                         if (data.image) {
-                            $('#modal-preview').attr('src', '{{ URL::to('/img/user') }}' + '/' + data.image);
-                            $('#hidden_image').attr('src', '{{ URL::to('/img/user') }}' + '/' + data.image);
+                            $('#modal-preview').attr('src', '{{ URL::to('/img/user') }}' +
+                                '/' + data.image);
+                            $('#hidden_image').attr('src', '{{ URL::to('/img/user') }}' + '/' +
+                                data.image);
                         }
                     },
                     error: function(data) {

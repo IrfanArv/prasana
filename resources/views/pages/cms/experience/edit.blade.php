@@ -51,7 +51,7 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-12 px-3">
-                                                <div class="row mb-2">
+                                                <div class="row mb-2 d-flex justify-content-center">
                                                     <div class="col-auto">
                                                         @if ($experiences->image)
                                                             <img class="img-fluid rounded" id="modal-preview"
@@ -125,7 +125,9 @@
                                                         <span>Meta Title</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input name="meta_title" value="{{ old('meta_title', $experiences->meta_title) }}" id="meta_title" type="text" class="form-control">
+                                                        <input name="meta_title"
+                                                            value="{{ old('meta_title', $experiences->meta_title) }}"
+                                                            id="meta_title" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -133,7 +135,7 @@
                                                         <span>Meta Description</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <textarea class="form-control"  name="meta_desc" id="meta_desc" cols="10" rows="2">{{ old('meta_desc', $experiences->meta_desc) }}</textarea>
+                                                        <textarea class="form-control" name="meta_desc" id="meta_desc" cols="10" rows="2">{{ old('meta_desc', $experiences->meta_desc) }}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -141,12 +143,15 @@
                                                         <span>Meta Keyword</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input name="meta_keyword" value="{{ old('meta_keyword', $experiences->meta_keyword) }}" id="meta_keyword" type="text" class="form-control">
+                                                        <input name="meta_keyword"
+                                                            value="{{ old('meta_keyword', $experiences->meta_keyword) }}"
+                                                            id="meta_keyword" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-8 offset-md-4 text-right mt-3">
-                                                <a class="btn btn-light mr-1 mb-1" href="{{ url('dashboard/experience') }}">
+                                                <a class="btn btn-light mr-1 mb-1"
+                                                    href="{{ url('dashboard/experience') }}">
                                                     Back</a>
                                                 <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
                                             </div>

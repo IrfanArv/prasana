@@ -51,7 +51,7 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-12 px-3">
-                                                <div class="row mb-2">
+                                                <div class="row mb-2 d-flex justify-content-center">
                                                     <div class="col-auto">
                                                         @if ($villa->image)
                                                             <img class="img-fluid rounded" id="modal-preview"
@@ -76,8 +76,9 @@
                                                         <span>Villa Name</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input name="name" id="name" type="text" value="{{old('name', $villa->name) }}"
-                                                            class="form-control" onkeyup="convertToSlug()">
+                                                        <input name="name" id="name" type="text"
+                                                            value="{{ old('name', $villa->name) }}" class="form-control"
+                                                            onkeyup="convertToSlug()">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -85,7 +86,8 @@
                                                         <span>URL</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input name="slug" id="slug" type="text" value="{{old('slug', $villa->slug) }}" class="form-control">
+                                                        <input name="slug" id="slug" type="text"
+                                                            value="{{ old('slug', $villa->slug) }}" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -93,7 +95,9 @@
                                                         <span>Building Area</span>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <input name="building_area" value="{{old('building_area', $villa->building_area) }}" type="number" class="form-control">
+                                                        <input name="building_area"
+                                                            value="{{ old('building_area', $villa->building_area) }}"
+                                                            type="number" class="form-control">
                                                     </div>
                                                     <div class="col-md-2">
                                                         <span>SQM</span>
@@ -104,7 +108,9 @@
                                                         <span>Capacity</span>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <input name="capacity" type="number" value="{{old('capacity', $villa->capacity) }}" class="form-control">
+                                                        <input name="capacity" type="number"
+                                                            value="{{ old('capacity', $villa->capacity) }}"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-md-2">
                                                         <span>Guest</span>
@@ -115,7 +121,7 @@
                                                         <span>Description</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <textarea class="ckeditor" name="description" id="description" cols="30" rows="10">{{old('description', $villa->description) }}</textarea>
+                                                        <textarea class="ckeditor" name="description" id="description" cols="30" rows="10">{{ old('description', $villa->description) }}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -175,7 +181,8 @@
                                                         <span>Meta Title</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input name="meta_title" id="meta_title" type="text" value="{{old('meta_title', $villa->meta_title) }}"
+                                                        <input name="meta_title" id="meta_title" type="text"
+                                                            value="{{ old('meta_title', $villa->meta_title) }}"
                                                             class="form-control">
                                                     </div>
                                                 </div>
@@ -184,7 +191,7 @@
                                                         <span>Meta Description</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <textarea class="form-control" name="meta_desc" id="meta_desc" cols="10" rows="2">{{old('meta_desc', $villa->meta_desc) }}</textarea>
+                                                        <textarea class="form-control" name="meta_desc" id="meta_desc" cols="10" rows="2">{{ old('meta_desc', $villa->meta_desc) }}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -192,7 +199,9 @@
                                                         <span>Meta Keyword</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input name="meta_keyword" id="meta_keyword" type="text" value="{{old('meta_keyword', $villa->meta_keyword) }}" class="form-control">
+                                                        <input name="meta_keyword" id="meta_keyword" type="text"
+                                                            value="{{ old('meta_keyword', $villa->meta_keyword) }}"
+                                                            class="form-control">
                                                     </div>
                                                 </div>
                                             </div>

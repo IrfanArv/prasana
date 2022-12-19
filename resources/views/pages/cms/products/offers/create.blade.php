@@ -99,6 +99,18 @@
                                                         <div class="needsclick dropzone" id="document-dropzone"></div>
                                                     </div>
                                                 </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Send to</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select class="form-control" name="send_to" id="send_to">
+                                                            <option value="wa">WhatsApp</option>
+                                                            <option value="email">Email</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
                                                 <h4 class="content-header-title float-left mb-0">Meta Tags</h4>
                                                 <br>
                                                 <hr>
