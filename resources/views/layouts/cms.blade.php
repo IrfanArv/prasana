@@ -27,9 +27,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/extensions/sweetalert2.min.css') }}">
     <style>
-        dz-image img {
+        .dropzone .dz-preview .dz-image {
             width: 120px;
             height: 120px;
+            display: -webkit-inline-box;
         }
 
         .dropzone {
@@ -59,10 +60,12 @@
             top: 0;
             opacity: 0;
         }
-        .column-count{
+
+        .column-count {
             column-count: 4 !important;
         }
-        .column-count-2{
+
+        .column-count-2 {
             column-count: 2 !important;
         }
     </style>
@@ -104,6 +107,7 @@
                 }
             });
         });
+
         function readURL(input, id) {
             id = id || '#modal-preview';
             if (input.files) {

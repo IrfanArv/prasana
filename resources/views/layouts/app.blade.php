@@ -86,13 +86,12 @@
     </div>
 
 
-    <div class="modal fade" id="promotion" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal fade" id="promotion" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-promo" role="document">
             <div class="modal-content modal-transparent">
                 <div class="modal-body" id="content-promosi">
-                    <button type="button" class="btn-close shadow-none float-end" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn btn-transparent shadow-none float-end"
+                        data-bs-dismiss="modal"><i class="fas fa-times text-white"></i></button>
                     <a href="" class="btn btn-transparent shadow-none" id="urls-banner" target="_blank"
                         rel="noopener noreferrer">
                         <img class="img-fluid rounded" id="modal-image" src="">

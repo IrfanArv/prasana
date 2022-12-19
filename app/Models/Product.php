@@ -21,7 +21,8 @@ class Product extends Model implements HasMedia
         'description',
         'meta_title',
         'meta_desc',
-        'meta_keyword'
+        'meta_keyword',
+        'send_to'
     ];
 
     public function photos()

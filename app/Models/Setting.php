@@ -23,6 +23,7 @@ class Setting extends Model
         'wa_number',
         'wa_message',
         'widget_book',
-        'email_reciver'
+        'email_reciver',
+        'wa_reciver'
     ];
 }

@@ -13,7 +13,7 @@
             <h1 class="animate__animated animate__fadeInLeft"> {!! $data->title !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg') }}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
@@ -23,9 +23,15 @@
             {!! $data->description !!}
         </div>
         <div class="d-flex justify-content-start my-5">
-            <button type="button" class="btn btn-book-header shadow-none book-offer submitOffers" data-title="{!! $data->title !!}">
-                Book Now
-            </button>
+            @if ($data->send_to === 'email')
+                <button type="button" class="btn btn-book-header shadow-none book-offer submitOffers"
+                    data-title="{!! $data->title !!}">
+                    Book Now
+                </button>
+            @else
+                <a href="https://api.whatsapp.com/send?phone={{ $settings->wa_reciver }}&text=Hello%20Admin%20Prasana%20Resorts%20I%20would%20like%20to%20book%20a%20{!! Str::lower($data->title) !!}%20?"
+                    target="_blank" class="btn btn-book-header shadow-none me-3 d-none d-md-block">Book Now</a>
+            @endif
         </div>
     </div>
     <div class="home-sliders mb-5">

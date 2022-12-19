@@ -73,7 +73,7 @@
                                                             @endif
                                                         </div>
                                                     </td>
-                                                    <td>{{ $villa->name }}</td>
+                                                    <td>{!! $villa->name !!}</td>
                                                     <td>{{ $villa->building_area }} sqm</td>
                                                     <td>{{ $villa->capacity }} Guest</td>
                                                     <td class="p-1">

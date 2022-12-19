@@ -52,6 +52,7 @@
                                             <tr>
                                                 <th></th>
                                                 <th>Title</th>
+                                                <th>Direct Message</th>
                                                 <th>Slides</th>
                                                 <th class="text-center">Action</th>
                                             </tr>
@@ -67,7 +68,14 @@
                                                             </div>
                                                         </td>
                                                     @endif
-                                                    <td>{{ $product->title }}</td>
+                                                    <td>{!! Str::limit($product->title, 30) !!}</td>
+                                                    <td>
+                                                        @if ($product->send_to === 'email')
+                                                            Email
+                                                        @else
+                                                            WhatsApp
+                                                        @endif
+                                                    </td>
                                                     <td class="p-1">
                                                         <ul class="list-unstyled users-list m-0  d-flex align-items-center">
                                                             @foreach ($product->getMedia($mediaCollection)->take(2) as $media)
