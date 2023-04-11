@@ -59,7 +59,7 @@ class ProductController extends Controller
         ]);
         if ($request->hasFile('image')) {
             $imageName = date('YmdHis') . "." . $request->image->getClientOriginalExtension();
-            $destinationPath = 'img/products/';
+            $destinationPath = 'public/img/products/';
             $request->file('image')->move($destinationPath, $imageName);
             $input = [
                 'title' => $request->title,
@@ -136,9 +136,9 @@ class ProductController extends Controller
         ]);
         $product = Product::with('photos')->find($id);
         if ($request->hasFile('image')) {
-            \File::delete('img/products/' . $request->hidden_image);
+            \File::delete('public/img/products/' . $request->hidden_image);
             $imageName = date('YmdHis') . "." . $request->image->getClientOriginalExtension();
-            $destinationPath = 'img/products/';
+            $destinationPath = 'public/img/products/';
             $request->file('image')->move($destinationPath, $imageName);
             $product->update([
                 'title' => $request->title,
@@ -189,7 +189,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $data = Product::where('id', $id)->first(['image']);
-        \File::delete('img/products/' . $data->image);
+        \File::delete('public/img/products/' . $data->image);
         Product::find($id)->delete();
         return response()->json(array(
             'status' => true

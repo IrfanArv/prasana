@@ -12,3 +12,11 @@ yarn-error.log
 /.idea
 /.vscode
 composer.lock
+/config/filesystem.php
+.htaccess
+index.php
+database/migrations/2022_12_14_123515_create_media_table.php
+server.php
+artisan
+/storage
+img/

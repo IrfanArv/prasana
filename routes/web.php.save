@@ -15,7 +15,7 @@ use App\Http\Controllers\CMS\RatingController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\CMS\PromotionController;
 
-Route::get('/foo', function () {
+Route::get('/foos', function () {
     Artisan::call('storage:link');
 });
 

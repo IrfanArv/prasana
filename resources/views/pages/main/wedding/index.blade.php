@@ -33,7 +33,7 @@
                         <div class="content-greeting">
                             <h3 class="mt-3"> <a href="{{ route('weddings.detail', ['slug' => $item->slug]) }}">
                                     {!! $item->title !!}</a></h3>
-                            {!! Str::limit($item->description, 70) !!}
+                            
                             <div class="row">
                                 <div class="col-md-6 d-flex justify-content-md-start justify-content-center p-0">
                                     <a href="{{ route('weddings.detail', ['slug' => $item->slug]) }}"

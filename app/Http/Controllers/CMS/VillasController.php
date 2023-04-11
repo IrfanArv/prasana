@@ -53,7 +53,7 @@ class VillasController extends Controller
             'services' => 'required',
         ]);
         $imageName = date('YmdHis') . "." . $request->image->getClientOriginalExtension();
-        $destinationPath = 'img/villas/';
+        $destinationPath = 'public/img/villas/';
         $request->file('image')->move($destinationPath, $imageName);
         $input = [
             'name' => $request->name,
@@ -113,9 +113,9 @@ class VillasController extends Controller
 
         $villa = Villas::with('photos')->find($id);
         if ($request->hasFile('image')) {
-            \File::delete('img/villas/' . $request->hidden_image);
+            \File::delete('public/img/villas/' . $request->hidden_image);
             $imageName = date('YmdHis') . "." . $request->image->getClientOriginalExtension();
-            $destinationPath = 'img/villas/';
+            $destinationPath = 'public/img/villas/';
             $request->file('image')->move($destinationPath, $imageName);
             $villa->update([
                 'name' => $request->name,
@@ -166,7 +166,7 @@ class VillasController extends Controller
     public function destroy($id)
     {
         $data = Villas::where('id', $id)->first(['image']);
-        \File::delete('img/villas/' . $data->image);
+        \File::delete('public/img/villas/' . $data->image);
         Villas::find($id)->delete();
         return response()->json(array(
             'status' => true

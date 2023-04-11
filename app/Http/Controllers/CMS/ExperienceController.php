@@ -42,7 +42,7 @@ class ExperienceController extends Controller
         ]);
         if ($request->hasFile('image')) {
             $imageName = date('YmdHis') . "." . $request->image->getClientOriginalExtension();
-            $destinationPath = 'img/experience/';
+            $destinationPath = 'public/img/experience/';
             $request->file('image')->move($destinationPath, $imageName);
             $input = [
                 'title' => $request->title,
@@ -106,9 +106,9 @@ class ExperienceController extends Controller
         ]);
         $experience = Experience::with('photos')->find($id);
         if ($request->hasFile('image')) {
-            \File::delete('img/experience/' . $request->hidden_image);
+            \File::delete('public/img/experience/' . $request->hidden_image);
             $imageName = date('YmdHis') . "." . $request->image->getClientOriginalExtension();
-            $destinationPath = 'img/experience/';
+            $destinationPath = 'public/img/experience/';
             $request->file('image')->move($destinationPath, $imageName);
             $experience->update([
                 'title' => $request->title,
@@ -153,7 +153,7 @@ class ExperienceController extends Controller
     public function destroy($id)
     {
         $data = Experience::where('id', $id)->first(['image']);
-        \File::delete('img/experience/' . $data->image);
+        \File::delete('public/img/experience/' . $data->image);
         Experience::find($id)->delete();
         return response()->json(array(
             'status' => true

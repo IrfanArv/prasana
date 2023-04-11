@@ -13,8 +13,8 @@ $(document).ready(function () {
     headerNav.classList.remove("navbar-light");
     headerNav.classList.remove("bg-light");
     var myNav = document.getElementById("header");
-    var logo = "../../img/whitelogo.svg";
-    var logoblack = "../../img/blacklogo.svg";
+    var logo = "/public/img/whitelogo.svg";
+    var logoblack = "/public/img/blacklogo.svg";
     var burger1 = document.getElementById("burger1");
     var burger2 = document.getElementById("burger2");
     var burger3 = document.getElementById("burger3");
