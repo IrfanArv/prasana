@@ -69,6 +69,12 @@
                     </ul>
                 </li>
             @endcan --}}
+            @can('dining')
+                <li class=" nav-item {{ Request::segment(2) === 'dining' ? 'active' : null }}"><a
+                        href="{{ url('/dashboard/dining') }}"><i class="feather icon-moon"></i><span
+                            class="menu-title">Dining</span></a>
+                </li>
+            @endcan
             @can('experience')
                 <li class=" nav-item {{ Request::segment(2) === 'experience' ? 'active' : null }}"><a
                         href="{{ url('/dashboard/experience') }}"><i class="feather icon-wind"></i><span

@@ -10,7 +10,7 @@
         }
 
         .slick-slide:not(.slick-active) {
-            margin: 20px 0;
+            /*margin: 20px 0;*/
         }
 
         .child {
@@ -19,6 +19,21 @@
 
         .slide:not(.slick-active) {
             cursor: pointer;
+        }
+
+        .slick-arrow {
+            display: none !important;
+        }
+
+        .container-slide {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            padding-left: 80px;
+            width: 100%;
+            height: auto;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
         }
 
         .modal-header {
@@ -36,6 +51,13 @@
 
             .slick-slide:not(.slick-active) {
                 margin: 0px;
+            }
+
+            .container-slide {
+                position: initial;
+                padding: 50px 20px 20px 20px;
+                -webkit-transform: none;
+                transform: none;
             }
 
             .modal-header {
@@ -59,47 +81,49 @@
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
-
+    <br />
     <div class="container welcome my-md-5 text-center">
         <div class="content-greeting">
-            <h3>Whim</h3>
-            <p class="text-center">
-                You can enjoy a meal at Prasana serving the guests of Prasana Villa, or stop in at the snack bar/deli.
-                Quench your thirst with your favorite drink at the bar/lounge. Cooked-to-order breakfasts are available
-                daily from 7 AM to 1:00 PM for a free.
-            </p>
-            <button type="button" class="btn book-cope" data-bs-toggle="modal" data-bs-target="#modalchope">
+            <h3 class="mb-3">@php echo $data[0]->title @endphp</h3>
+            @php echo $data[0]->description @endphp
+            {{-- <button type="button" class="btn book-cope" data-bs-toggle="modal" data-bs-target="#modalchope">
                 Reserve Table
-            </button>
-            <div class="center-slider m-md-5 mt-5">
-                @foreach ($whim->getMedia($mediaCollection) as $media)
-                    <img src="{{ asset($media->getUrl()) }}" class="img-fluid ms-md-5 me-md-5">
-                @endforeach
-            </div>
+            </button> --}}
+            <a href="@php echo $data[0]->url @endphp" target="_blank" class="btn btn-book-header mt-4 ms-0">Reserve Table</a>
+            {{-- <div class="center-slider m-md-5 mt-5"> --}}
+                {{-- @foreach ($whim->getMedia($mediaCollection) as $media) --}}
+                    {{-- <img src="{{ asset('/img/dining/' . $data[0]->image) }}" class="img-fluid ms-md-5 me-md-5"> --}}
+                {{-- @endforeach --}}
+            {{-- </div> --}}
         </div>
     </div>
-    <div class="container-fluid p-0 h-100 mt-5" id="petit">
+    <br />
+    <div class="container-fluid p-0 h-100 mt-2" id="whim">
+        <div class="slide-dining-1">
+            @foreach ($data[0]->getMedia($mediaCollection) as $media)
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
+            @endforeach
+        </div>
+    </div>
+    <div class="container-fluid p-0 h-100" id="petit">
         <div class="row">
-            <div class="col-md-4">
-                <div class="relative">
-                    <img src="{{ asset('/img/mask.png') }}" class="img-absolute img-fluid p-3" alt="Petit Garçon">
+            <div class="col-md-4 relative">
+                <div class="container-slide">
+                    <div class="slide-dining-2">
+                        @foreach ($data[1]->getMedia($mediaCollection) as $media)
+                            <img src="{{ asset($media->getUrl()) }}" class="img-fluid">
+                        @endforeach
+                    </div>
                 </div>
+                {{-- <div class="relative">
+                    <img src="{{ asset('/img/dining/' . $data[1]->image) }}" class="img-absolute img-fluid p-3" alt="Petit Garçon">
+                </div> --}}
             </div>
             <div class="col-md-8 book-home p-5 d-flex flex-grow-1 justify-content-center align-items-center height-100">
                 <div class="content-greeting ps-md-5 me-md-5">
-                    <h3>Petit Garçon</h3>
-                    <p class="me-md-5 pe-md-5">
-                        We offer a relaxing and inviting atmosphere with high-end amazing desserts. <br>
-                        <br>
-                        Our desserts and pastries include seasonal fresh fruit , chocolate croissants, sticky buns, generous
-                        cake slices, cheesecakes, and much more.
-                        <br>
-                        <br>
-                        Experience by pushing the boundaries between sweet and savoury with progressive, carefully
-                        researched offerings that are as delectable as they are beautiful
-                    </p>
-                    <a href="https://bookv5.chope.co/booking?rid=whim2208bal&source=rest_prasanabyarjaniresorts.com"
-                        target="_blank" class="btn btn-book-header ms-0">Bar Menu</a>
+                    <h3>@php echo $data[1]->title @endphp</h3>
+                    @php echo $data[1]->description @endphp
+                    <a href="@php echo $data[1]->url @endphp" target="_blank" class="btn btn-book-header ms-0">Bar Menu</a>
                 </div>
             </div>
         </div>
@@ -152,6 +176,31 @@
                         slidesToShow: 1
                     }
                 }]
+            });
+            $('.slide-dining-1').slick({
+                infinite: true,
+                dots: false,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: false,
+                arrow: false,
+                responsive: [{
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            });
+            $('.slide-dining-2').slick({
+                infinite: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrow: false,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+
             });
         });
     </script>

@@ -112,14 +112,21 @@
                                                         <span>Send to</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <select class="form-control" name="send_to" id="send_to">
+								<select class="form-control" name="send_to" id="send_to">
                                                             @if (old('send_to', $data->send_to) === 'wa')
                                                                 <option value="wa" selected>WhatsApp</option>
                                                                 <option value="email">Email</option>
+<option value="booking_engine">Open Booking Engine</option>
                                                             @endif
                                                             @if (old('send_to', $data->send_to) === 'email')
                                                                 <option value="wa">WhatsApp</option>
                                                                 <option value="email" selected>Email</option>
+<option value="booking_engine">Open Booking Engine</option>
+                                                            @endif
+                                                            @if (old('send_to', $data->send_to) === 'booking_engine')
+                                                                <option value="wa">WhatsApp</option>
+                                                                <option value="email">Email</option>
+                                                                <option value="booking_engine">Open Booking Engine</option>
                                                             @endif
                                                         </select>
                                                     </div>
@@ -179,6 +186,7 @@
     <script>
         CKEDITOR.replace('description', {
             allowedContent: true,
+versionCheck: false
         });
         var uploadedDocumentMap = {}
         Dropzone.options.documentDropzone = {

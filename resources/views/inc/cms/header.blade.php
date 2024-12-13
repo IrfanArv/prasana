@@ -21,7 +21,9 @@
                                 @if(Auth::user()->image)
                                 <img id="preview" class="img-40 rounded-circle" height="40" width="40" src="{{ ('/img/user/'.Auth::user()->image) }}" alt="{{ Auth::user()->name }}">
                                 @else
-                                <img id="preview" src="https://avatars.dicebear.com/api/adventurer/:jhone.svg" class="img-40 rounded-circle" height="40" width="40">
+					 <img id="preview"
+                                        src="https://api.dicebear.com/9.x/initials/svg?seed={{ Auth::user()->name }}"
+                                        class="img-40 rounded-circle" height="40" width="40">
                                 @endif
                             </span>
                         </a>

@@ -14,24 +14,25 @@ use App\Http\Controllers\CMS\VillasController;
 use App\Http\Controllers\CMS\RatingController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\CMS\PromotionController;
+use App\Http\Controllers\CMS\DiningController;
 
 Route::get('/foo', function () {
     Artisan::call('storage:link');
 });
 
 Route::get('/', [MainController::class, 'index']);
-Route::get('/our-villa', [MainController::class, 'listVilla']);
+Route::get('/our-villa', [MainController::class, 'listVilla'])->name('villa');
 Route::get('/our-villa/{slug}', [MainController::class, 'detailVilla'])->name('villa.detail');
-Route::get('/dinings', [MainController::class, 'dining']);
-Route::get('/menaka-spa', [MainController::class, 'spa']);
-Route::get('/weddings', [MainController::class, 'wedding']);
+Route::get('/dinings', [MainController::class, 'dining'])->name('dining');
+Route::get('/menaka-spa', [MainController::class, 'spa'])->name('spa');
+Route::get('/weddings', [MainController::class, 'wedding'])->name('wedding');
 Route::get('/weddings/{slug}', [MainController::class, 'detailWedding'])->name('weddings.detail');
-Route::get('/offers', [MainController::class, 'offers']);
+Route::get('/offers', [MainController::class, 'offers'])->name('offers');
 Route::get('/offers/{slug}', [MainController::class, 'detailOffers'])->name('offers.detail');
-Route::get('/experience', [MainController::class, 'experience']);
+Route::get('/experience', [MainController::class, 'experience'])->name('experience');
 Route::get('/experience/{slug}', [MainController::class, 'detailExperience'])->name('experience.detail');
-Route::get('/gallery', [MainController::class, 'gallery']);
-Route::get('/contact-us', [MainController::class, 'contact']);
+Route::get('/gallery', [MainController::class, 'gallery'])->name('gallery');
+Route::get('/contact-us', [MainController::class, 'contact'])->name('contact');
 Route::post('/send-mail', [MainController::class, 'sendMail']);
 Route::get('/get-banner', [MainController::class, 'getBanner']);
 Auth::routes();
@@ -87,6 +88,14 @@ Route::group([
     Route::get('/experience/edit/{id}', [ExperienceController::class, 'edit'])->name('experience.edit');
     Route::put('/experience/update/{id}', [ExperienceController::class, 'update'])->name('experience.update');
     Route::get('/experience/destroy/{id}', [ExperienceController::class, 'destroy'])->name('experience.delete');
+    // dining
+    Route::get('/dining', [DiningController::class, 'index'])->name('dining.index');
+    Route::get('/dining/create', [DiningController::class, 'create'])->name('dining.create');
+    Route::post('/dining/store', [DiningController::class, 'store'])->name('dining.store');
+    Route::post('/dining/store/media', [DiningController::class, 'storeMedia'])->name('dining.storeMedia');
+    Route::get('/dining/edit/{id}', [DiningController::class, 'edit'])->name('dining.edit');
+    Route::put('/dining/update/{id}', [DiningController::class, 'update'])->name('dining.update');
+    Route::get('/dining/destroy/{id}', [DiningController::class, 'destroy'])->name('dining.delete');
     // wedding & offers
     Route::get('/wedding', [ProductController::class, 'weddingList'])->name('wedding.index');
     Route::get('/offers', [ProductController::class, 'offersList'])->name('offers.index');

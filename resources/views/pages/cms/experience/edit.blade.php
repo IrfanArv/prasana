@@ -171,6 +171,10 @@
 @push('scripts')
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>
+        CKEDITOR.replace('description', {
+            allowedContent: true,
+            versionCheck: false
+        });
         var uploadedDocumentMap = {}
         Dropzone.options.documentDropzone = {
             url: '{{ route('experience.storeMedia') }}',

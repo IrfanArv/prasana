@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -34,6 +39,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script defer src="{{ asset('assets/main/main.js') }}"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+
+
+
 </head>
 
 <body>
@@ -42,7 +52,7 @@
     @include('inc.main.footer')
     <div class="modal fade" id="modalSubmit" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
             <div class="modal-content modal-offers">
                 <div class="modal-header modal-offers">
                     <h4 class="modal-title text-center" id="title"></h4>
@@ -54,30 +64,71 @@
                 <form id="formOffers" name="formOffers" class="form-horizontal p-md-2">
                     <div class="modal-body">
                         <div class="row">
-                            <div class="form-group col-md-12">
-                                <label>Full Name </label>
-                                <input type="hidden" name="booking_value" id="booking_value">
-                                <input id="name" name="name" type="text" placeholder="Full Name"
-                                    class="form-control" required>
+                            <div class="col-md-6">
+                                <div class="form-group col-md-12">
+                                    <label>Full Name </label>
+                                    <input type="hidden" name="booking_value" id="booking_value">
+                                    <input id="name" name="name" type="text" placeholder="Full Name"
+                                        class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-12 mt-3">
+                                    <label>Email </label>
+                                    <input id="email" name="email" type="text" placeholder="Email"
+                                        class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-12 mt-3">
+                                    <label>Phone (Include Country Code)</label>
+                                    <input id="phone" name="phone" type="number" placeholder="Phone"
+                                        class="form-control" required>
+                                </div>
+
+                                <div class="form-group col-md-12 mt-3">
+                                    <label>Country of Resindence</label>
+                                    <select id="country-select" name="country" class="form-control"
+                                        placeholder="Select a country" required>
+                                        <option value="" disabled selected>Select country of resindence
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group col-md-12 mt-3">
-                                <label>Email </label>
-                                <input id="email" name="email" type="text" placeholder="Email"
-                                    class="form-control" required>
-                            </div>
-                            <div class="form-group col-md-12 mt-3">
-                                <label>Phone </label>
-                                <input id="phone" name="phone" type="number" placeholder="Phone"
-                                    class="form-control" required>
-                            </div>
-                            <div class="form-group col-md-12 mt-3">
-                                <label>Additional Request </label>
-                                <textarea class="form-control" name="additional" id="additional" cols="10" rows="8"></textarea>
+                            <div class="col-md-6">
+                                <div class="form-group col-md-12">
+                                    <label>Number of Guest </label>
+                                    <input id="guest" name="guest" type="number"
+                                        placeholder="Number of Guest" class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-12 mt-3">
+                                    <label class="form-label">Event Start Date</label>
+                                    <div class="input-group date" data-provide="datepicker"
+                                        data-date-format="dd/mm/yyyy">
+                                        <input type="text" class="form-control" id="start_date" name="start_date"
+                                            placeholder="Start Date" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="form-label">Event End Date</label>
+                                    <div class="input-group date" data-provide="datepicker"
+                                        data-date-format="dd/mm/yyyy">
+                                        <input type="text" class="form-control" id="end_date" name="end_date"
+                                            placeholder="End Date" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-12 mt-3">
+                                    <label>Additional Request </label>
+                                    <textarea class="form-control" name="additional" id="additional"></textarea>
+                                </div>
                             </div>
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-book-header mt-3 ms-0 rounded" id="btn-save"
-                                value="create">Submit</button>
+                                value="create">INQUIRY</button>
                         </div>
                     </div>
                 </form>
@@ -125,17 +176,22 @@
         </div>
     </div>
 
-
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
     <script type="text/javascript">
         AOS.init();
         var SITEURL = '{{ URL::to('') }}';
         var SEGMENT = '{{ Request::segment(1) }}';
         $(document).ready(function() {
+            $('.datepicker').datepicker();
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -172,6 +228,20 @@
                 }
             });
 
+            const countrySelect = document.getElementById('country-select');
+            const apiUrl = 'https://restcountries.com/v3.1/all';
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(country => {
+                        const option = document.createElement('option');
+                        option.value = country.name.common;
+                        option.text = country.name.common;
+                        countrySelect.add(option);
+                    });
+                })
+                .catch(error => console.error(error));
+
         });
         $('body').on('submit', '#formOffers', function(e) {
             e.preventDefault();
@@ -202,6 +272,57 @@
         });
     </script>
     @stack('scripts')
+
+    @if(Route::is('villa') || Route::is('dining') || Route::is('spa') || Route::is('wedding') || Route::is('offers') || Route::is('experience') || Route::is('gallery') || Route::is('contact'))
+        <!-- TRACKING -->
+        <!-- Sojern Tag v6_js, Pixel Version: 10 -->
+        <script src="https://static.sojern.com/utils/sjrn_autocx.js"></script>
+        <script>
+          (function () {
+            /* Please fill the following values. */
+            var params = {
+              hd1: "", /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+              hd2: "", /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+              hc1: "", /* Destination City */
+              hs1: "", /* Destination State or Region */
+              hn1: "", /* Destination Country */
+              hpr: "", /* Hotel Property */
+              hr: "", /* Number of Rooms */
+              hsr: "", /* Hotel Star Rating */
+              hpid: "", /* Property ID */
+              t: "", /* Number of Travelers */
+              hp: "", /* Purchase Price */
+              hcu: "", /* Purchase Currency */
+              hconfno: "", /* Confirmation Number */
+              hdc: "", /* Discount Code */
+              sha256_eml: "", /* Hashed Email SHA256 */
+              sha1_eml: "", /* Hashed Email SHA1 */
+              md5_eml: "", /* Hashed Email MD5 */
+              ccid: "", /* Client Cookie id */
+              ffl: "" /* Loyalty Status */
+            };
+
+            /* Please do not modify the below code. */
+            try{params = Object.assign({}, sjrn_params, params);}catch(e){}
+            var cid = [];
+            var paramsArr = [];
+            var cidParams = [];
+            var pl = document.createElement('iframe');
+            var defaultParams = {"vid":"hot"};
+            for(key in defaultParams) { params[key] = defaultParams[key]; };
+            for(key in cidParams) { cid.push(params[cidParams[key]]); };
+            params.cid = cid.join('|');
+            for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+            pl.type = 'text/html';
+            pl.setAttribute('style','height:0; width: 0; display:none;');
+            pl.async = true;
+            pl.src = 'https://static.sojern.com/cip/w/s?id=205885&f_v=v6_js&p_v=1&' +
+            paramsArr.join('&');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+          })();
+        </script>
+        <!-- End Sojern Tag -->
+    @endif
 </body>
 
 </html>

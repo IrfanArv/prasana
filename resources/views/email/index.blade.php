@@ -98,9 +98,8 @@
 
                         <!-- Your logo is here -->
                         <img style="width: 82px; max-width: 82px; height: 64px; max-height: 64px; text-align: center; color: #ffffff;"
-                            alt="Logo"
-                            src="https://prasanabyarjaniresorts.com/wp-content/themes/prasana-villas/assets/images/logo.png"
-                            align="center" width="82" height="64">
+                            alt="Logo" src="https://prasanabyarjaniresorts.com/public/img/logo.png" align="center"
+                            width="82" height="64">
 
                     </td>
                 </tr>
@@ -128,22 +127,35 @@
 
                         <p
                             style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
-                            {{ $input['name'] }}
+                            Name: {{ $input['name'] }}
+                        </p>
+                        <p
+                            style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            Country: {{ $input['country'] }}
                         </p>
                         <p
                             style="font-size: 15px; line-height: 10px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
-                            {{ $input['email'] }}
+                            Email: {{ $input['email'] }}
                         </p>
                         <p
                             style="font-size: 15px; line-height: 10px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
-                            {{ $input['phone'] }}
+                            Phone: {{ $input['phone'] }}
                         </p>
                         <p
                             style="font-size: 15px; line-height: 50px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            Number of Guest: {{ $input['guest'] }}
+                        </p>
+                        <p
+                            style="font-size: 15px; line-height: 50px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            Event Date: {{ $input['start_date'] }} - {{ $input['end_date'] }}
+                        </p>
+
+                        <p
+                            style="font-size: 15px; line-height: 10px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
                             Additional Request:
                         </p>
                         <p
-                            style="font-size: 15px; line-height: 50px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+                            style="font-size: 15px; line-height: 10px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
                             {{ $input['additional'] }}
                         </p>
                         <!--[if mso]>

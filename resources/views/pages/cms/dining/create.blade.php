@@ -1,19 +1,19 @@
 @extends('layouts.cms')
-@section('title', 'Create Offers')
+@section('title', 'Create Dining')
 @section('content')
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Offers</h2>
+                        <h2 class="content-header-title float-left mb-0">Dining</h2>
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{ url('/dashboard/wedding') }}">Offers</a>
+                                <li class="breadcrumb-item"><a href="{{ url('/dashboard/dining') }}">Dining</a>
                                 </li>
-                                <li class="breadcrumb-item active">Create Offers
+                                <li class="breadcrumb-item active">Create Dining
                                 </li>
                             </ol>
                         </div>
@@ -44,9 +44,8 @@
                         </div>
                         <div class="card-content">
                             <div class="card-body">
-                                <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('dining.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <input type="hidden" name="type" value="offer">
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-12 px-3">
@@ -70,17 +69,7 @@
                                                         <span>Title</span>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input name="title" id="title" type="text"
-                                                            class="form-control" onkeyup="convertToSlug()">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-md-4">
-                                                        <span>URL</span>
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <input name="slug" id="slug" type="text"
-                                                            class="form-control">
+                                                        <input name="title" id="title" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -93,57 +82,24 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-md-4">
+                                                        <span>URL</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input name="url" id="url" type="text"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
                                                         <span>Slides</span>
                                                     </div>
                                                     <div class="col-md-8">
                                                         <div class="needsclick dropzone" id="document-dropzone"></div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-md-4">
-                                                        <span>Send to</span>
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <select class="form-control" name="send_to" id="send_to">
-                                                            <option value="wa">WhatsApp</option>
-                                                            <option value="email">Email</option>
- 							    <option value="booking_engine">Open Booking Engine</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <h4 class="content-header-title float-left mb-0">Meta Tags</h4>
-                                                <br>
-                                                <hr>
-                                                <div class="form-group row">
-                                                    <div class="col-md-4">
-                                                        <span>Meta Title</span>
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <input name="meta_title" id="meta_title" type="text"
-                                                            class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-md-4">
-                                                        <span>Meta Description</span>
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <textarea class="form-control" name="meta_desc" id="meta_desc" cols="10" rows="2"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-md-4">
-                                                        <span>Meta Keyword</span>
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <input name="meta_keyword" id="meta_keyword" type="text"
-                                                            class="form-control">
-                                                    </div>
-                                                </div>
                                             </div>
                                             <div class="col-md-8 offset-md-4 text-right mt-3">
-                                                <a class="btn btn-light mr-1 mb-1" href="{{ url('dashboard/offers') }}">
+                                                <a class="btn btn-light mr-1 mb-1" href="{{ url('dashboard/dining') }}">
                                                     Back</a>
                                                 <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
                                             </div>
@@ -161,16 +117,11 @@
 @endsection
 
 @push('scripts')
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('description', {
-            allowedContent: true,
-         versionCheck : false
-
-        });
         var uploadedDocumentMap = {}
         Dropzone.options.documentDropzone = {
-            url: '{{ route('product.storeMedia') }}',
+            url: '{{ route('dining.storeMedia') }}',
             maxFilesize: 4, // MB
             addRemoveLinks: true,
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
@@ -191,18 +142,6 @@
                 }
                 $('form').find('input[name="photo[]"][value="' + name + '"]').remove()
             }
-        }
-
-        function convertToSlug() {
-
-            var title = document.getElementById('title').value;
-            var strings = [title];
-            var str = strings.filter(e => e.length > 0).join('-');
-            str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ').toLowerCase();
-            str = str.replace(/^\s+|\s+$/gm, '');
-            str = str.replace(/\s+/g, '-');
-            document.getElementById('meta_title').value = strings;
-            document.getElementById('slug').value = str;
         }
     </script>
 @endpush

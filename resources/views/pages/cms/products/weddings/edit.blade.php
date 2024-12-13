@@ -179,6 +179,7 @@
     <script>
         CKEDITOR.replace('description', {
             allowedContent: true,
+versionCheck: false
         });
         var uploadedDocumentMap = {}
         Dropzone.options.documentDropzone = {

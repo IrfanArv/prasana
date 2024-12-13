@@ -11,6 +11,7 @@ use App\Models\FeatureVilla;
 use App\Models\ServiceVilla;
 use App\Models\Product;
 use App\Models\Experience;
+use App\Models\Dining;
 use Mail;
 use App\Mail\NotifyMail;
 use App\Models\Promotion;
@@ -80,8 +81,10 @@ class MainController extends Controller
     {
         $mainSlider = PageSlider::where('pages', 'dining')->first();
         $whim = PageSlider::where('pages', 'whim')->first();
+        $data = Dining::orderBy('id', 'ASC')->get();
         return view('pages.main.dining.index', [
             'whim' => $whim,
+            'data'  => $data,
             'mainSlider' => $mainSlider,
             'mediaCollection' => $this->mediaCollection
         ]);
@@ -148,6 +151,7 @@ class MainController extends Controller
             'mediaCollection' => $this->mediaCollection
         ]);
     }
+
     public function detailExperience($slug)
     {
         $data = Experience::where('slug', $slug)->first();
@@ -176,7 +180,7 @@ class MainController extends Controller
         return view('pages.main.contact.index', [
             'mainSlider' => $mainSlider,
             'mediaCollection' => $this->mediaCollection
-        ]); 
+        ]);
     }
 
     public function sendMail(Request $request)
@@ -187,7 +191,11 @@ class MainController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'additional' => $request->additional,
-            'booking_value' => $request->booking_value
+            'booking_value' => $request->booking_value,
+            'country' => $request->country,
+            'guest' => $request->guest,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
         ];
         Mail::to($setting->email_reciver)->send(new NotifyMail($input));
         if (Mail::failures()) {
