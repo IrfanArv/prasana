@@ -70,6 +70,7 @@ class ProductController extends Controller
                 'meta_desc' => $request->meta_desc,
                 'meta_keyword' => $request->meta_keyword,
                 'send_to' => $request->send_to,
+		'link' => $request->external_link,
                 'image' => date('YmdHis') . "." . $request->image->getClientOriginalExtension()
             ];
         } else {
@@ -81,6 +82,7 @@ class ProductController extends Controller
                 'meta_title' => $request->meta_title,
                 'meta_desc' => $request->meta_desc,
                 'send_to' => $request->send_to,
+		'link' => $request->external_link,
                 'meta_keyword' => $request->meta_keyword,
             ];
         }
@@ -149,6 +151,7 @@ class ProductController extends Controller
                 'meta_desc' => $request->meta_desc,
                 'meta_keyword' => $request->meta_keyword,
                 'send_to' => $request->send_to,
+		'link' => $request->external_link,
                 'image' => date('YmdHis') . "." . $request->image->getClientOriginalExtension()
             ]);
         } else {
@@ -160,6 +163,7 @@ class ProductController extends Controller
                 'meta_title' => $request->meta_title,
                 'meta_desc' => $request->meta_desc,
                 'send_to' => $request->send_to,
+		'link' => $request->external_link,
                 'meta_keyword' => $request->meta_keyword,
             ]);
         }

@@ -69,9 +69,13 @@
                                                         </td>
                                                     @endif
                                                     <td>{!! Str::limit($product->title, 30) !!}</td>
-                                                    <td>
+<td>
                                                         @if ($product->send_to === 'email')
                                                             Email
+                                                        @elseif ($product->send_to === 'booking_engine')
+                                                            Booking Engine
+                                                        @elseif ($product->send_to === 'external_link')
+                                                            External Link
                                                         @else
                                                             WhatsApp
                                                         @endif

@@ -99,7 +99,8 @@
                                                         <div class="needsclick dropzone" id="document-dropzone"></div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
+
+<div class="form-group row">
                                                     <div class="col-md-4">
                                                         <span>Send to</span>
                                                     </div>
@@ -107,10 +108,22 @@
                                                         <select class="form-control" name="send_to" id="send_to">
                                                             <option value="wa">WhatsApp</option>
                                                             <option value="email">Email</option>
- 							    <option value="booking_engine">Open Booking Engine</option>
+                                                            <option value="booking_engine">Booking Engine</option>
+                                                            <option value="external_link">External Link</option>
                                                         </select>
                                                     </div>
                                                 </div>
+                                                {{-- external link --}}
+                                                <div class="form-group row" id="external_link_group" style="display: none;">
+                                                    <div class="col-md-4">
+                                                        <span>External Link</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input name="external_link" id="external_link" type="text"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                {{-- end of external link --}}
 
                                                 <h4 class="content-header-title float-left mb-0">Meta Tags</h4>
                                                 <br>
@@ -204,5 +217,26 @@
             document.getElementById('meta_title').value = strings;
             document.getElementById('slug').value = str;
         }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendToSelect = document.getElementById('send_to');
+            const externalLinkGroup = document.getElementById('external_link_group');
+
+
+            function toggleExternalLinkInput() {
+                if (sendToSelect.value === 'external_link') {
+                    externalLinkGroup.style.display = 'flex';
+                } else {
+                    externalLinkGroup.style.display = 'none';
+                }
+            }
+
+
+            sendToSelect.addEventListener('change', toggleExternalLinkInput);
+
+
+            toggleExternalLinkInput();
+        });
     </script>
 @endpush

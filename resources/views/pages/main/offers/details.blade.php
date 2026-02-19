@@ -23,18 +23,18 @@
             {!! $data->description !!}
         </div>
 <div class="d-flex justify-content-start my-5">
-            @if ($data->send_to === 'email')
-                <button type="button" class="btn btn-book-header shadow-none book-offer submitOffers"
+ @if ($data->send_to === 'email')
+                <button type="button" class="btn btn-book-header shadow-none book-offer submitOffers px-4"
                     data-title="{!! $data->title !!}">
                     Book Now
                 </button>
-            @elseif($data->send_to === 'booking_engine')
-                <div class="d-flex justify-content-start my-5">
-                    {!! $settings->widget_book !!}
-                </div>
+            @elseif ($data->send_to === 'booking_engine')
+                {!! $settings->widget_book !!}
+            @elseif ($data->send_to === 'external_link')
+                <a href="{{ $data->link }}" target="_blank" class="btn btn-book-header shadow-none me-3 px-4">Book Now</a>
             @else
                 <a href="https://api.whatsapp.com/send?phone={{ $settings->wa_reciver }}&text=Hello%20Admin%20Prasana%20Resorts%20I%20would%20like%20to%20book%20a%20{!! Str::lower($data->title) !!}%20?"
-                    target="_blank" class="btn btn-book-header shadow-none me-3 d-none d-md-block">Book Now</a>
+                    target="_blank" class="btn btn-book-header shadow-none me-3 px-4">Book Now</a>
             @endif
         </div>
     </div>
