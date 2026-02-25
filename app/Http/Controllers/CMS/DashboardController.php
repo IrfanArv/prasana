@@ -20,6 +20,16 @@ class DashboardController extends Controller
         $experience = Experience::count();
         $wedding = Product::where('type', 'wedding')->count();
         $offer = Product::where('type', 'offer')->count();
-        return view('pages.cms.dashboard.index', compact('villa','experience', 'offer', 'wedding'));
+
+        // Blog Analytics
+        $blogPosts = \App\Models\BlogPost::count();
+        $blogPublished = \App\Models\BlogPost::published()->count();
+        $blogDrafts = \App\Models\BlogPost::where('is_published', false)->count();
+        $blogCategories = \App\Models\BlogCategory::count();
+
+        return view('pages.cms.dashboard.index', compact(
+            'villa', 'experience', 'offer', 'wedding',
+            'blogPosts', 'blogPublished', 'blogDrafts', 'blogCategories'
+        ));
     }
 }

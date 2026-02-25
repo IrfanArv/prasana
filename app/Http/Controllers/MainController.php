@@ -16,6 +16,9 @@ use Mail;
 use App\Mail\NotifyMail;
 use App\Models\Promotion;
 use App\Models\Setting;
+use App\Models\BlogPost;
+use App\Models\BlogCategory;
+use App\Models\BlogTag;
 
 class MainController extends Controller
 {
@@ -204,4 +207,174 @@ class MainController extends Controller
             return response()->json('Done');
           }
     }
+
+    // BLOG
+    public function blog()
+    {
+        $featuredPosts = BlogPost::published()->featured()
+            ->with(['categories', 'tags', 'author'])
+            ->orderBy('created_at', 'DESC')
+            ->take(8)
+            ->get();
+
+        $recentPosts = BlogPost::published()
+            ->with(['categories', 'tags', 'author'])
+            ->orderBy('created_at', 'DESC')
+            ->paginate(7);
+
+        $categories = BlogCategory::withCount(['posts' => function ($query) {
+            $query->where('is_published', true);
+        }])->orderBy('name')->get();
+
+        $tags = BlogTag::orderBy('name')->get();
+
+        return view('pages.main.blog.index', [
+            'featuredPosts' => $featuredPosts,
+            'recentPosts' => $recentPosts,
+            'categories' => $categories,
+            'tags' => $tags,
+        ]);
+    }
+
+    public function blogDetail($slug)
+    {
+        $post = BlogPost::published()
+            ->with(['categories', 'tags', 'author'])
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        $relatedPosts = BlogPost::published()
+            ->where('id', '!=', $post->id)
+            ->whereHas('categories', function ($query) use ($post) {
+                $query->whereIn('blog_categories.id', $post->categories->pluck('id'));
+            })
+            ->take(3)
+            ->get();
+
+        $categories = BlogCategory::withCount(['posts' => function ($query) {
+            $query->where('is_published', true);
+        }])->orderBy('name')->get();
+
+        $tags = BlogTag::orderBy('name')->get();
+
+        return view('pages.main.blog.detail', [
+            'post' => $post,
+            'relatedPosts' => $relatedPosts,
+            'categories' => $categories,
+            'tags' => $tags,
+        ]);
+    }
+
+    public function blogByCategory($slug)
+    {
+        $category = BlogCategory::where('slug', $slug)->firstOrFail();
+
+        $featuredPosts = BlogPost::published()->featured()
+            ->with(['categories', 'tags', 'author'])
+            ->whereHas('categories', function ($query) use ($category) {
+                $query->where('blog_categories.id', $category->id);
+            })
+            ->orderBy('created_at', 'DESC')
+            ->take(8)
+            ->get();
+
+        $recentPosts = BlogPost::published()
+            ->with(['categories', 'tags', 'author'])
+            ->whereHas('categories', function ($query) use ($category) {
+                $query->where('blog_categories.id', $category->id);
+            })
+            ->orderBy('created_at', 'DESC')
+            ->paginate(7);
+
+        $categories = BlogCategory::withCount(['posts' => function ($query) {
+            $query->where('is_published', true);
+        }])->orderBy('name')->get();
+
+        $tags = BlogTag::orderBy('name')->get();
+
+        return view('pages.main.blog.index', [
+            'featuredPosts' => $featuredPosts,
+            'recentPosts' => $recentPosts,
+            'categories' => $categories,
+            'tags' => $tags,
+            'pageTitle' => 'Category: ' . $category->name,
+            'pageSubtitle' => 'Browse all posts in the "' . $category->name . '" category',
+            'sectionTitle' => $category->name,
+            'emptyMessage' => 'No posts found in the "' . $category->name . '" category yet. Check back later!',
+        ]);
+    }
+
+    public function blogByTag($slug)
+    {
+        $tag = BlogTag::where('slug', $slug)->firstOrFail();
+
+        $featuredPosts = BlogPost::published()->featured()
+            ->with(['categories', 'tags', 'author'])
+            ->whereHas('tags', function ($query) use ($tag) {
+                $query->where('blog_tags.id', $tag->id);
+            })
+            ->orderBy('created_at', 'DESC')
+            ->take(8)
+            ->get();
+
+        $recentPosts = BlogPost::published()
+            ->with(['categories', 'tags', 'author'])
+            ->whereHas('tags', function ($query) use ($tag) {
+                $query->where('blog_tags.id', $tag->id);
+            })
+            ->orderBy('created_at', 'DESC')
+            ->paginate(7);
+
+        $categories = BlogCategory::withCount(['posts' => function ($query) {
+            $query->where('is_published', true);
+        }])->orderBy('name')->get();
+
+        $tags = BlogTag::orderBy('name')->get();
+
+        return view('pages.main.blog.index', [
+            'featuredPosts' => $featuredPosts,
+            'recentPosts' => $recentPosts,
+            'categories' => $categories,
+            'tags' => $tags,
+            'pageTitle' => 'Tag: ' . $tag->name,
+            'pageSubtitle' => 'Browse all posts tagged with "' . $tag->name . '"',
+            'sectionTitle' => '#' . $tag->name,
+            'emptyMessage' => 'No posts found with the tag "' . $tag->name . '" yet. Check back later!',
+        ]);
+    }
+
+    public function blogSearch(Request $request)
+    {
+        $query = $request->get('q', '');
+
+        $featuredPosts = collect();
+
+        $recentPosts = BlogPost::published()
+            ->with(['categories', 'tags', 'author'])
+            ->where(function ($q) use ($query) {
+                $q->where('title', 'LIKE', '%' . $query . '%')
+                  ->orWhere('excerpt', 'LIKE', '%' . $query . '%')
+                  ->orWhere('content', 'LIKE', '%' . $query . '%');
+            })
+            ->orderBy('created_at', 'DESC')
+            ->paginate(7);
+
+        $categories = BlogCategory::withCount(['posts' => function ($query) {
+            $query->where('is_published', true);
+        }])->orderBy('name')->get();
+
+        $tags = BlogTag::orderBy('name')->get();
+
+        return view('pages.main.blog.index', [
+            'featuredPosts' => $featuredPosts,
+            'recentPosts' => $recentPosts,
+            'categories' => $categories,
+            'tags' => $tags,
+            'pageTitle' => 'Search: ' . $query,
+            'pageSubtitle' => 'Search results for "' . $query . '"',
+            'sectionTitle' => 'Results for "' . $query . '"',
+            'emptyMessage' => 'No posts found matching "' . $query . '". Try different keywords!',
+        ]);
+    }
 }
+

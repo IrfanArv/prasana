@@ -237,7 +237,7 @@
         var uploadedDocumentMap = {}
         Dropzone.options.documentDropzone = {
             url: '{{ route('sliders.storeMedia') }}',
-            maxFilesize: 4, // MB
+            maxFilesize: 64, // MB
             addRemoveLinks: true,
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
             headers: {

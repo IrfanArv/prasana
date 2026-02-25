@@ -110,6 +110,22 @@
             </li>
             @endcan
 
+            <li
+                class="nav-item has-sub {{ Request::segment(2) === 'blog' ? 'active' : null }} {{ Request::segment(2) === 'blog-category' ? 'active' : null }} {{ Request::segment(2) === 'blog-tag' ? 'active' : null }}">
+                <a href="#"><i class="feather icon-edit"></i><span class="menu-title">Blog</span></a>
+                <ul class="menu-content">
+                    <li class="{{ Request::segment(2) === 'blog' ? 'active' : null }}"><a
+                            href="{{ url('/dashboard/blog') }}"><i></i><span class="menu-item">Blog Posts</span></a>
+                    </li>
+                    <li class="{{ Request::segment(2) === 'blog-category' ? 'active' : null }}"><a
+                            href="{{ url('/dashboard/blog-category') }}"><i></i><span class="menu-item">Categories</span></a>
+                    </li>
+                    <li class="{{ Request::segment(2) === 'blog-tag' ? 'active' : null }}"><a
+                            href="{{ url('/dashboard/blog-tag') }}"><i></i><span class="menu-item">Tags</span></a>
+                    </li>
+                </ul>
+            </li>
+
             @can('users-list')
                 <li
                     class="nav-item has-sub {{ Request::segment(2) === 'roles' ? 'active' : null }} {{ Request::segment(2) === 'users' ? 'active' : null }}">

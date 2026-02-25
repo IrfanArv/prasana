@@ -13,7 +13,7 @@
     <meta name="keywords" content="@yield('meta_keyword')" />
     <meta name="og:title" content="@yield('meta_title')" />
     <meta name="og:url" content="{{ url('/') }}" />
-    <meta name="og:image" content="{{ asset('img/whitelogo.svg') }}" />
+    <meta name="og:image" content="@yield('meta_image', asset('img/whitelogo.svg'))" />
     <meta name="og:site_name" content="@yield('meta_title')" />
     <meta name="og:description" content="@yield('meta_desc')" />
     <title>@yield('title')Prasana by Arjani Resorts</title>

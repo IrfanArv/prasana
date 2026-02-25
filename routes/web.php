@@ -15,6 +15,9 @@ use App\Http\Controllers\CMS\RatingController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\CMS\PromotionController;
 use App\Http\Controllers\CMS\DiningController;
+use App\Http\Controllers\CMS\BlogController;
+use App\Http\Controllers\CMS\BlogCategoryController;
+use App\Http\Controllers\CMS\BlogTagController;
 
 Route::get('/foo', function () {
     Artisan::call('storage:link');
@@ -35,6 +38,12 @@ Route::get('/gallery', [MainController::class, 'gallery'])->name('gallery');
 Route::get('/contact-us', [MainController::class, 'contact'])->name('contact');
 Route::post('/send-mail', [MainController::class, 'sendMail']);
 Route::get('/get-banner', [MainController::class, 'getBanner']);
+// blog public routes
+Route::get('/blog', [MainController::class, 'blog'])->name('blog');
+Route::get('/blog/search', [MainController::class, 'blogSearch'])->name('blog.search');
+Route::get('/blog/category/{slug}', [MainController::class, 'blogByCategory'])->name('blog.category');
+Route::get('/blog/tag/{slug}', [MainController::class, 'blogByTag'])->name('blog.tag');
+Route::get('/blog/{slug}', [MainController::class, 'blogDetail'])->name('blog.detail');
 Auth::routes();
 
 Route::group([
@@ -121,6 +130,23 @@ Route::group([
     Route::post('/promotions/store', [PromotionController::class, 'store']);
     Route::get('/promotions/edit/{id}', [PromotionController::class, 'edit']);
     Route::get('/promotions/destroy/{id}', [PromotionController::class, 'destroy']);
-
+    // blog posts
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
+    Route::post('/blog/store/media', [BlogController::class, 'storeMedia'])->name('blog.storeMedia');
+    Route::get('/blog/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::put('/blog/update/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::get('/blog/destroy/{id}', [BlogController::class, 'destroy'])->name('blog.delete');
+    // blog categories
+    Route::get('/blog-category', [BlogCategoryController::class, 'index'])->name('blog-category.index');
+    Route::post('/blog-category/store', [BlogCategoryController::class, 'store'])->name('blog-category.store');
+    Route::get('/blog-category/edit/{id}', [BlogCategoryController::class, 'edit'])->name('blog-category.edit');
+    Route::get('/blog-category/destroy/{id}', [BlogCategoryController::class, 'destroy'])->name('blog-category.delete');
+    // blog tags
+    Route::get('/blog-tag', [BlogTagController::class, 'index'])->name('blog-tag.index');
+    Route::post('/blog-tag/store', [BlogTagController::class, 'store'])->name('blog-tag.store');
+    Route::get('/blog-tag/edit/{id}', [BlogTagController::class, 'edit'])->name('blog-tag.edit');
+    Route::get('/blog-tag/destroy/{id}', [BlogTagController::class, 'destroy'])->name('blog-tag.delete');
 
 });

@@ -56,6 +56,10 @@
                             href="{{ url('/gallery') }}">Gallery</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) === 'blog' ? 'active' : null }}"
+                            href="{{ url('/blog') }}">Blog</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'contact-us' ? 'active' : null }}"
                             href="{{ url('/contact-us') }}">Contact</a>
                     </li>

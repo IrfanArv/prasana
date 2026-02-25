@@ -336,6 +336,18 @@ button.btn.item-gallery {
     color: #333333;
     text-transform: uppercase;
     padding-left: 0px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+button.btn.item-gallery:hover {
+    color: #a58639;
+}
+
+button.btn.item-gallery.active {
+    color: #a58639;
+    font-weight: 700;
+    border-bottom: 2px solid #a58639;
 }
 
 .title {

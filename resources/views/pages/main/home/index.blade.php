@@ -145,17 +145,21 @@
                         Gallery
                     </div>
                     <ul class="gallery mt-md-3">
-                        <li> <button class="btn item-gallery shadow-none"> All</button></li>
+                        <li> <button class="btn item-gallery shadow-none active" data-filter="all"> All</button></li>
                         @foreach ($gallery as $item)
-                            <li> <button class="btn item-gallery shadow-none"> {{ $item->title }}</button></li>
+                            <li> <button class="btn item-gallery shadow-none" data-filter="{{ $item->title }}"> {{ $item->title }}</button></li>
                         @endforeach
                     </ul>
                 </div>
             </div>
             <div class="col-md-8 mb-5">
                 <div class="slide-gallery">
-                    @foreach ($slide->getMedia($mediaCollection) as $media)
-                        <img src="{{ asset($media->getUrl()) }}" class="img-fluid">
+                    @foreach ($gallery as $item)
+                        @foreach ($item->getMedia('photo') as $media)
+                            <div data-gallery="{{ $item->title }}">
+                                <img src="{{ asset($media->getUrl()) }}" class="img-fluid">
+                            </div>
+                        @endforeach
                     @endforeach
                 </div>
             </div>
@@ -319,6 +323,39 @@
                 autoplay: true,
                 autoplaySpeed: 3000,
                 arrow: false
+            });
+
+            // Gallery filter
+            $('.item-gallery').on('click', function() {
+                var filter = $(this).data('filter');
+
+                // Update active state
+                $('.item-gallery').removeClass('active');
+                $(this).addClass('active');
+
+                // Destroy current slick
+                if ($('.slide-gallery').hasClass('slick-initialized')) {
+                    $('.slide-gallery').slick('unslick');
+                }
+
+                // Show/hide slides based on filter
+                if (filter === 'all') {
+                    $('.slide-gallery > div').show();
+                } else {
+                    $('.slide-gallery > div').hide();
+                    $('.slide-gallery > div[data-gallery="' + filter + '"]').show();
+                }
+
+                // Reinitialize slick with visible slides
+                $('.slide-gallery').slick({
+                    dots: true,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrow: false
+                });
             });
         });
     </script>
