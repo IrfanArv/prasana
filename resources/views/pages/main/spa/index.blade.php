@@ -52,7 +52,7 @@
         <div class="content-greeting">
             <h3>Menaka Spa</h3>
             <p class="text-center">
-            Menaka Spa unfolds as a sanctuary of celestial calm, where every ritual is thoughtfully crafted to elevate the senses and restore inner harmony. Settled in infinitely blissful surroundings, the spa embodies a philosophy of nurturing transformation through delicately contemplated purifying rituals, inviting guests to surrender to treatments that are both indulgent and deeply healing. From aromatic scrubs and soothing baths to intuitive massages that melt tension and reawaken vitality, each touch is delivered with grace and intention. Within this tranquil haven, time slows, the mind softens, and the body is guided gently back to balance, allowing every guest to emerge renewed, radiant, and beautifully aligned in body, mind, and spirit.
+            Menaka Spa unfolds as a sanctuary of celestial calm, where every ritual is thoughtfully crafted to elevate the senses and restore inner harmony.<br> Settled in infinitely blissful surroundings, the spa embodies a philosophy of nurturing transformation through delicately contemplated purifying rituals, inviting guests to surrender to treatments that are both indulgent and deeply healing. <br> From aromatic scrubs and soothing baths to intuitive massages that melt tension and reawaken vitality, each touch is delivered with grace and intention. <br> Within this tranquil haven, time slows, the mind softens, and the body is guided gently back to balance, allowing every guest to emerge renewed, radiant, and beautifully aligned in body, mind, and spirit.
             </p>
             
             <div class="center-slider m-md-5">

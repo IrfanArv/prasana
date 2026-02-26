@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\CMS\DashboardController;
 use App\Http\Controllers\CMS\RoleController;
 use App\Http\Controllers\CMS\UsersController;
@@ -22,6 +23,8 @@ use App\Http\Controllers\CMS\BlogTagController;
 Route::get('/foo', function () {
     Artisan::call('storage:link');
 });
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::get('/', [MainController::class, 'index']);
 Route::get('/our-villa', [MainController::class, 'listVilla'])->name('villa');
