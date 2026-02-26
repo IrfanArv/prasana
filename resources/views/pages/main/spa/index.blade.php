@@ -61,7 +61,7 @@
                 @endforeach
             </div>
             <div class="text-center my-4">
-                <a href="{{ asset('pdf/treatment-menu.pdf') }}" target="_blank" rel="noopener noreferrer" class="btn btn-book-header px-4 py-3">Treatment Menu</a>
+                <a href="{{ asset('pdf/' . rawurlencode('Menaka Spa Treatment Menu 2026.pdf')) }}" target="_blank" rel="noopener noreferrer" class="btn btn-book-header px-4 py-3">Treatment Menu</a>
             </div>
             <p class="text-center mt-3 mb-0">
                 To reserve your moment of tranquillity, please reach out to our Spa Therapists, who will graciously assist with every detail: <a href="mailto:menakaspa.prasana@arjaniresorts.com">menakaspa.prasana@arjaniresorts.com</a>.
