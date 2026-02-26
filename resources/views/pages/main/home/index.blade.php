@@ -14,7 +14,7 @@
             <p class="animate__animated animate__fadeInUp animate__delay-1s">{{ $mainSlider->sub_title }}</p>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg') }}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
@@ -48,7 +48,7 @@
                         <li>Best Rate Guarantee</li>
                         <li>One-way complimentary airport transfer</li>
                         <li>Early check-in and late check-out priority</li>
-			<li>Complimentary yoga available every Monday, Wednesday and Friday</li>
+                        <li>Complimentary yoga available every Monday, Wednesday and Friday</li>
                         <li>Repeater Guest Privilege</li>
                         <li>Terms & Conditions Apply</li>
                     </ul>
@@ -147,7 +147,8 @@
                     <ul class="gallery mt-md-3">
                         <li> <button class="btn item-gallery shadow-none active" data-filter="all"> All</button></li>
                         @foreach ($gallery as $item)
-                            <li> <button class="btn item-gallery shadow-none" data-filter="{{ $item->title }}"> {{ $item->title }}</button></li>
+                            <li> <button class="btn item-gallery shadow-none" data-filter="{{ $item->title }}">
+                                    {{ $item->title }}</button></li>
                         @endforeach
                     </ul>
                 </div>
@@ -166,53 +167,7 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="address p-md-0 p-4">
-                    <div class="title">
-                        {!! $settings->meta_title !!}
-                    </div>
-                    <div class=" street ps-0 pe-0 pt-3 pb-3">
-                        {!! $settings->address !!}
-                    </div>
-                    <div class="contact">
-                        <p class="m-0">T. {!! $settings->phone !!}</p>
-                        <p>E. {!! $settings->email !!}</p>
-                    </div>
-                    <div class="title">
-                        Follow Us
-                    </div>
-                    <ul class="sosmed">
-                        <li> <a href="{!! $settings->facebook !!}" class="btn btn-sosmed" target="_blank"
-                                rel="noopener noreferrer"> <img src="{{ asset('/img/fb.svg' )}}" class="img-fluid"
-                                    alt="Facebook"> </a></li>
-                        <li> <a href="{!! $settings->instagram !!}" class="btn btn-sosmed" target="_blank"
-                                rel="noopener noreferrer"> <img src="{{ asset('/img/ig.svg') }}" class="img-fluid"
-                                    alt="Instagram"></a></li>
-                        <li> <a href="{!! $settings->gplus !!}" class="btn btn-sosmed" target="_blank"
-                                rel="noopener noreferrer"> <img src="{{ asset('/img/gp.svg') }}" class="img-fluid"
-                                    alt="Google"></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="subscribe-title">
-                    Don’t miss our update.
-                    Subscribe us for more info
-                </div>
-                <form class="row form-subscribe">
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" id="subscribe"
-                            placeholder="Enter your email address">
-                    </div>
-                    <div class="col-md-4 mt-md-0 mt-3">
-                        <button type="submit" class="btn btn-subscribe mb-3">Subscribe</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+
 
 @endsection
 @push('scripts')
@@ -220,48 +175,76 @@
     <!-- Sojern Tag v6_js, Pixel Version: 10 -->
     <script src="https://static.sojern.com/utils/sjrn_autocx.js"></script>
     <script>
-      (function () {
-        /* Please fill the following values. */
-        var params = {
-          hd1: "", /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
-          hd2: "", /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
-          hc1: "", /* Destination City */
-          hs1: "", /* Destination State or Region */
-          hn1: "", /* Destination Country */
-          hpr: "", /* Hotel Property */
-          hr: "", /* Number of Rooms */
-          hsr: "", /* Hotel Star Rating */
-          hpid: "", /* Property ID */
-          t: "", /* Number of Travelers */
-          hp: "", /* Purchase Price */
-          hcu: "", /* Purchase Currency */
-          hconfno: "", /* Confirmation Number */
-          hdc: "", /* Discount Code */
-          sha256_eml: "", /* Hashed Email SHA256 */
-          sha1_eml: "", /* Hashed Email SHA1 */
-          md5_eml: "", /* Hashed Email MD5 */
-          ccid: "", /* Client Cookie id */
-          ffl: "" /* Loyalty Status */
-        };
+        (function() {
+            /* Please fill the following values. */
+            var params = {
+                hd1: "",
+                /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                hd2: "",
+                /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                hc1: "",
+                /* Destination City */
+                hs1: "",
+                /* Destination State or Region */
+                hn1: "",
+                /* Destination Country */
+                hpr: "",
+                /* Hotel Property */
+                hr: "",
+                /* Number of Rooms */
+                hsr: "",
+                /* Hotel Star Rating */
+                hpid: "",
+                /* Property ID */
+                t: "",
+                /* Number of Travelers */
+                hp: "",
+                /* Purchase Price */
+                hcu: "",
+                /* Purchase Currency */
+                hconfno: "",
+                /* Confirmation Number */
+                hdc: "",
+                /* Discount Code */
+                sha256_eml: "",
+                /* Hashed Email SHA256 */
+                sha1_eml: "",
+                /* Hashed Email SHA1 */
+                md5_eml: "",
+                /* Hashed Email MD5 */
+                ccid: "",
+                /* Client Cookie id */
+                ffl: "" /* Loyalty Status */
+            };
 
-        /* Please do not modify the below code. */
-        try{params = Object.assign({}, sjrn_params, params);}catch(e){}
-        var cid = [];
-        var paramsArr = [];
-        var cidParams = [];
-        var pl = document.createElement('iframe');
-        var defaultParams = {"vid":"hot"};
-        for(key in defaultParams) { params[key] = defaultParams[key]; };
-        for(key in cidParams) { cid.push(params[cidParams[key]]); };
-        params.cid = cid.join('|');
-        for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
-        pl.type = 'text/html';
-        pl.setAttribute('style','height:0; width: 0; display:none;');
-        pl.async = true;
-        pl.src = 'https://static.sojern.com/cip/w/s?id=205881&f_v=v6_js&p_v=1&' +
-        paramsArr.join('&');
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
-      })();
+            /* Please do not modify the below code. */
+            try {
+                params = Object.assign({}, sjrn_params, params);
+            } catch (e) {}
+            var cid = [];
+            var paramsArr = [];
+            var cidParams = [];
+            var pl = document.createElement('iframe');
+            var defaultParams = {
+                "vid": "hot"
+            };
+            for (key in defaultParams) {
+                params[key] = defaultParams[key];
+            };
+            for (key in cidParams) {
+                cid.push(params[cidParams[key]]);
+            };
+            params.cid = cid.join('|');
+            for (key in params) {
+                paramsArr.push(key + '=' + encodeURIComponent(params[key]))
+            };
+            pl.type = 'text/html';
+            pl.setAttribute('style', 'height:0; width: 0; display:none;');
+            pl.async = true;
+            pl.src = 'https://static.sojern.com/cip/w/s?id=205881&f_v=v6_js&p_v=1&' +
+                paramsArr.join('&');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+        })();
     </script>
     <!-- End Sojern Tag -->
 
