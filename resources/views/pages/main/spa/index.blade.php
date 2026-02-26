@@ -51,15 +51,21 @@
     <div class="container welcome my-md-5 text-center">
         <div class="content-greeting">
             <h3>Menaka Spa</h3>
-            <p class="text-center">Settled in infinitely blissful surroundings, Menaka Spa is envisioned to nurture the
-                celestial transformation
-                through its delicately contemplated purifying rituals
+            <p class="text-center">
+            Menaka Spa unfolds as a sanctuary of celestial calm, where every ritual is thoughtfully crafted to elevate the senses and restore inner harmony. Settled in infinitely blissful surroundings, the spa embodies a philosophy of nurturing transformation through delicately contemplated purifying rituals, inviting guests to surrender to treatments that are both indulgent and deeply healing. From aromatic scrubs and soothing baths to intuitive massages that melt tension and reawaken vitality, each touch is delivered with grace and intention. Within this tranquil haven, time slows, the mind softens, and the body is guided gently back to balance, allowing every guest to emerge renewed, radiant, and beautifully aligned in body, mind, and spirit.
             </p>
+            
             <div class="center-slider m-md-5">
                 @foreach ($sliderSpa->getMedia($mediaCollection) as $media)
                     <img src="{{ asset($media->getUrl()) }}" class="img-fluid ms-5 me-5">
                 @endforeach
             </div>
+            <div class="text-center my-4">
+                <a href="{{ asset('pdf/treatment-menu.pdf') }}" target="_blank" rel="noopener noreferrer" class="btn btn-book-header px-4 py-3">Treatment Menu</a>
+            </div>
+            <p class="text-center mt-3 mb-0">
+                To reserve your moment of tranquillity, please reach out to our Spa Therapists, who will graciously assist with every detail: <a href="mailto:menakaspa.prasana@arjaniresorts.com">menakaspa.prasana@arjaniresorts.com</a>.
+            </p>
         </div>
     </div>
 @endsection
