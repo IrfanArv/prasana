@@ -20,7 +20,3 @@ server.php
 artisan
 /storage
 img/
-!public/img/
-public/img/*
-!public/img/google-review.png
-!public/img/tripadvisor-award.png
