@@ -11,11 +11,15 @@
     <meta name="description" content="@yield('meta_desc')">
     <meta name="author" content="Era Digital Media">
     <meta name="keywords" content="@yield('meta_keyword')" />
-    <meta name="og:title" content="@yield('meta_title')" />
-    <meta name="og:url" content="{{ url('/') }}" />
-    <meta name="og:image" content="@yield('meta_image', asset('img/whitelogo.svg'))" />
-    <meta name="og:site_name" content="@yield('meta_title')" />
-    <meta name="og:description" content="@yield('meta_desc')" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@yield('meta_title')" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:image" content="@yield('meta_image', secure_url(asset('img/welcome.png')))" />
+    <meta property="og:image:secure_url" content="@yield('meta_image', secure_url(asset('img/welcome.png')))" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="@yield('meta_title')" />
+    <meta property="og:description" content="@yield('meta_desc')" />
     <title>@yield('title')Prasana by Arjani Resorts</title>
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon/favicon.ico') }}">
