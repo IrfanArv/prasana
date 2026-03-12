@@ -21,19 +21,17 @@
     <div class="container-fluid mt-md-5 welcome">
         <div class="row">
             <div class="col-md-6 p-0">
-                <img src="{{ asset('/img/welcome.png') }}" class="content-image-welcome img-fluid"
+                <img src="{{ asset('/img/new-welcome.png') }}" class="content-image-welcome img-fluid"
                     alt="welcome to prasana by arjani resort">
             </div>
             <div
-                class="col-md-6 p-md-5 p-4 d-flex flex-grow-1 justify-content-center align-items-center order-first order-md-last">
+                class="col-md-6 p-1 ps-4 d-flex flex-grow-1 justify-content-center align-items-center order-first order-md-last">
                 <div class="content-greeting">
-                    <h5 data-aos="fade-down" data-aos-duration="1000">Welcome TO</h5>
-                    <h2 data-aos="fade-left" data-aos-duration="1000">PRASANA</h2>
+                    <h5 data-aos="fade-down" data-aos-duration="1000">Welcome To</h5>
+                    <h2 data-aos="fade-left" data-aos-duration="1000">Prasana</h2>
                     <h4 data-aos="fade-left" data-aos-duration="1000">by arjani resort</h4>
                     <p class="pe-md-5 pe-3" data-aos="fade-down" data-aos-duration="1000">
-                        Raised on the land of limitless seclusion, Prasana by Arjani Resorts is contrived to present the
-                        haven of bliss through the exquisite simplicity of its elements, utmost purity of its bearer’s
-                        culture and unfeigned sincerity of its indulgence.
+                       A serene cliff‑front sanctuary of all‑villa luxury in Bali’s tranquil Uluwatu, Prasana by Arjani Resorts offers an elevated retreat where contemporary design, personalised service and cultural immersion come together seamlessly. Guided by a philosophy of Simplicity, Purity and Sincerity, the resort blends private pool villas, immersive wellness experiences and distinctive dining at Whim restaurant with the French‑inspired artistry of Petit Garçon, appealing to couples, honeymooners, families and discerning travellers, as well as those seeking an exceptional setting for intimate weddings and curated group celebrations. The result is a refined balance of elevated luxury, holistic wellbeing and meaningful connection.
                     </p>
                 </div>
             </div>
@@ -43,14 +41,15 @@
         <div class="book-home">
             <div class="row content-book">
                 <div class="col-md-6">
-                    <div class="title-book mt-5" data-aos="fade-down" data-aos-duration="1000">WHY DIRECT BOOK?</div>
+                    <div class="title-book mt-5" data-aos="fade-down" data-aos-duration="1000">BOOK DIRECT WITH PRASANA</div>
                     <ul class="book" data-aos="fade-down" data-aos-duration="1000">
-                        <li>Best Rate Guarantee</li>
-                        <li>One-way complimentary airport transfer</li>
+                        <li>Best rate guarantee</li>
+                        <li>One-way airport transfer</li>
                         <li>Early check-in and late check-out priority</li>
-                        <li>Complimentary yoga available every Monday, Wednesday and Friday</li>
-                        <li>Repeater Guest Privilege</li>
-                        <li>Terms & Conditions Apply</li>
+                        <li>30-minute Menaka Spa treatment</li>
+                        <li>Yoga sessions</li>
+                        <li>Welcome beverage </li>
+                        <li><a href="https://www.savaya.com" target="_blank">Access to Savaya Bali</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 d-flex flex-grow-1 justify-content-center align-items-center mt-md-5">
@@ -64,36 +63,52 @@
     </div>
     <div class="container p-md-5 p-3">
         <div class="row">
-            <div class="slide-villa-home">
-                @foreach ($villas as $villa)
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6 p-md-5 p-3 d-flex flex-grow-1 justify-content-center align-items-center">
-                                <div class="content-greeting text-md-end ps-md-5">
-                                    <h5 class="d-none d-md-block">villas</h5>
-                                    <h3>{!! $villa->name !!}</h3>
-                                    {!! $villa->description !!}
-                                    <a href="{{ url('/our-villa/' . $villa->slug) }}"
-                                        class="btn btn-book-header mt-3">Explore</a>
+            <div class="slide-villa-home-wrapper">
+                <div class="slide-villa-home">
+                    @foreach ($villas as $villa)
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 p-md-5 p-3 d-flex flex-grow-1 justify-content-center align-items-center">
+                                    <div class="content-greeting text-md-end ps-md-5">
+                                        <h5 class="d-none d-md-block">villas</h5>
+                                        <h3>{!! $villa->name !!}</h3>
+                                        {!! $villa->description !!}
+                                        <a href="{{ url('/our-villa/' . $villa->slug) }}"
+                                            class="btn btn-book-header mt-3">Explore</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-first order-md-last">
+                                    @if ($villa->image)
+                                        <img src="{{ asset('/img/villas/' . $villa->image) }}" alt="{{ $villa->name }}"
+                                            class="img-fluid img-villa-home pe-1">
+                                    @endif
                                 </div>
                             </div>
-                            <div class="col-md-6 order-first order-md-last">
-                                @if ($villa->image)
-                                    <img src="{{ asset('/img/villas/' . $villa->image) }}" alt="{{ $villa->name }}"
-                                        class="img-fluid img-villa-home pe-1">
-                                @endif
-                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
+                <button class="villa-arrow villa-arrow-left" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="villa-arrow villa-arrow-right" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </div>
 
-    <div class="home-sliders">
-        @foreach ($homeSlider->getMedia($mediaCollection) as $media)
-            <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
-        @endforeach
+    <div class="home-sliders-wrapper">
+        <div class="home-sliders">
+            @foreach ($homeSlider->getMedia($mediaCollection) as $media)
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
+            @endforeach
+        </div>
+        <button class="home-arrow home-arrow-left" aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="home-arrow home-arrow-right" aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </div>
 
     <div class="container mt-5">
@@ -265,7 +280,9 @@
                 slidesToShow: 1,
                 autoplay: true,
                 autoplaySpeed: 5000,
-                arrow: false,
+                arrows: true,
+                prevArrow: $('.villa-arrow-left'),
+                nextArrow: $('.villa-arrow-right'),
             });
             $('.home-sliders').slick({
                 infinite: true,
@@ -273,7 +290,9 @@
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 3000,
-                arrow: false,
+                arrows: true,
+                prevArrow: $('.home-arrow-left'),
+                nextArrow: $('.home-arrow-right'),
                 responsive: [{
                     breakpoint: 480,
                     settings: {

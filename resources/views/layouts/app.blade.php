@@ -14,8 +14,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('meta_title')" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:image" content="@yield('meta_image', secure_url(asset('img/welcome.png')))" />
-    <meta property="og:image:secure_url" content="@yield('meta_image', secure_url(asset('img/welcome.png')))" />
+    <meta property="og:image" content="@yield('meta_image', secure_url(asset('img/new-welcome.png')))" />
+    <meta property="og:image:secure_url" content="@yield('meta_image', secure_url(asset('img/new-welcome.png')))" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="@yield('meta_title')" />

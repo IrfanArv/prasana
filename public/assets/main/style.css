@@ -3,6 +3,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -47,7 +48,9 @@ img.img-fluid.img-products {
     font-weight: normal;
     font-style: normal;
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+
 .modal-promo {
     max-width: 600px !important;
 }
@@ -62,6 +65,7 @@ form.row.form-subscribe {
     left: 100%;
     transform: translate(0%, -180%);
 }
+
 .form-control:focus {
     color: #495057;
     background-color: #fff;
@@ -69,6 +73,7 @@ form.row.form-subscribe {
     outline: 0;
     box-shadow: none !important;
 }
+
 label {
     font-family: "Avenir-Light";
     font-weight: 300;
@@ -154,6 +159,7 @@ a.btn-experience {
 a.btn-experience:hover {
     color: #aa9767;
 }
+
 i.fas.fa-chevron-right {
     font-size: 15px;
 }
@@ -170,6 +176,7 @@ i.fas.fa-chevron-right {
     line-height: 41px;
     color: #fff;
 }
+
 .experience-large {
     left: 35%;
 }
@@ -194,6 +201,7 @@ button.btn.btn-subscribe.mb-3 {
     padding: 15px 50px 15px 50px;
     transition: all 0.5s ease-in-out;
 }
+
 input#subscribe {
     padding: 14px;
     border: 1px solid #a58639;
@@ -260,7 +268,7 @@ img.img-absolute.img-fluid {
     padding: 10px 250px 30px 0px;
 }
 
-.address > .title {
+.address>.title {
     font-family: "Avenir";
     font-style: normal;
     font-weight: 500;
@@ -281,7 +289,7 @@ img.img-absolute.img-fluid {
 
 .book-home {
     background-image: url("./bg-1.png");
-    margin-top: -70px;
+    margin-top: 0px;
     width: 100%;
 }
 
@@ -304,7 +312,7 @@ ul.feature {
     color: #828282;
 }
 
-ul.feature > li {
+ul.feature>li {
     text-transform: none;
     margin-top: 5px;
 }
@@ -385,6 +393,7 @@ img.rounded-circle.avatar {
     line-height: 25px;
     color: #1b1d21;
 }
+
 .user-name p {
     font-size: 16px;
     line-height: 22px;
@@ -409,6 +418,7 @@ p.comments {
     line-height: 43px;
     color: #a58639;
 }
+
 ul.book {
     font-family: "Avenir-Light";
     font-style: normal;
@@ -419,10 +429,12 @@ ul.book {
     color: #333333;
     margin-top: 20px;
 }
+
 .main-sliders {
     position: relative;
     width: 100vw;
 }
+
 .content-book {
     padding: 100px;
 }
@@ -454,6 +466,7 @@ p.quotes-home {
     line-height: 30px;
     color: #1b1d21;
 }
+
 .content-greeting h5 {
     font-weight: 500;
     font-size: 14px;
@@ -472,7 +485,7 @@ p.quotes-home {
 .content-greeting h3 {
     font-weight: 500;
     font-size: 26px;
-    line-height: 41px;
+    line-height: 30px;
     color: #a58639;
 }
 
@@ -582,6 +595,7 @@ img.img-fluid.img-villa-home {
     font-size: 50px;
     line-height: 55px;
 }
+
 .slider-text-main p {
     font-family: "Avenir-Light";
     font-weight: 400;
@@ -592,6 +606,7 @@ img.img-fluid.img-villa-home {
 .item-slide-experiece {
     width: 480px;
 }
+
 .experience {
     width: 900px;
 }
@@ -600,117 +615,147 @@ img.img-fluid.img-villa-home {
     .title-inner {
         left: 8%;
     }
+
     .loc-inner {
         left: 8%;
     }
+
     .experience-large {
         left: 17%;
     }
+
     a.btn-experience {
         left: 33%;
     }
+
     img.img-fluid.img-experience {
         width: 415px;
         height: 500px;
     }
+
     .content-greeting h3 a {
         font-size: 18px;
         line-height: 22px;
     }
+
     img.img-absolute.img-fluid {
         position: relative;
         top: 0;
         left: 0;
         transform: initial;
     }
+
     .height-100 {
         height: auto !important;
     }
+
     a.dropdown-item {
         color: #f9fafb !important;
         background: #a58639 !important;
     }
+
     .navbar-expand-md .navbar-nav .dropdown-menu {
         background-color: #a58639 !important;
         padding: 0px;
         border: none;
     }
+
     a#show-modal {
         margin-left: 30px;
     }
+
     .ps-6 {
         padding-left: 1rem !important;
     }
+
     .pe-6 {
         padding-right: 1rem !important;
     }
+
     form.row.form-subscribe {
         margin-left: 0px;
     }
+
     .subscribe-title {
         font-size: 27px;
         line-height: 36px;
         margin-left: 1rem;
         margin-bottom: 1rem;
     }
+
     img.img-fluid.img-villa-home {
         height: 200px;
         object-fit: cover;
         padding-left: 15px;
         padding-right: 15px !important;
     }
+
     a.btn.btn-book-header {
         margin-left: 0px !important;
     }
+
     .content-greeting h5 {
         font-size: 12px;
         line-height: 12px;
     }
+
     .content-greeting h3 {
         font-size: 22px;
         line-height: 29px;
     }
+
     ul.book {
         font-size: 18px;
         line-height: 33px;
         text-align: left;
     }
+
     .title-book {
         font-size: 28px;
         line-height: 30px;
         text-align: center;
     }
+
     .content-book {
         padding: 50px;
     }
+
     .content-greeting h2 {
         font-size: 36px;
         line-height: 40px;
     }
+
     .welcome {
         padding: 15px;
     }
+
     .address {
         padding: 50px;
         width: 100vw;
     }
+
     .frame iframe {
         height: 50vh;
     }
+
     .slider-text-main {
         left: 40%;
     }
+
     .slider-text-main h1 {
         font-size: 45px;
         line-height: 45px;
     }
+
     .slider-text-main p {
         font-size: 22px;
         line-height: normal;
     }
+
     .content-greeting {
         padding: 0px 20px 0px 20px;
     }
+
     .street {
         padding: 10px 50px 30px 0px;
     }
@@ -738,6 +783,7 @@ a.nav-link:hover {
     font-family: "Avenir" !important;
     font-weight: 800 !important;
 }
+
 a.nav-link.active {
     font-family: "Avenir" !important;
     font-weight: 800 !important;
@@ -755,12 +801,51 @@ img.img-fluid.fit-slider {
 
 .image-two-column {
     width: 50vw;
+    height: 400px;
     object-fit: cover;
-    /* height: 400px !important; */
 }
 
 .home-sliders {
     width: 100vw;
+}
+
+.home-sliders-wrapper {
+    position: relative;
+}
+
+.home-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-arrow:hover {
+    background: #a58639;
+    color: #fff;
+}
+
+.home-arrow i {
+    font-size: 16px !important;
+}
+
+.home-arrow-left {
+    left: 15px;
+}
+
+.home-arrow-right {
+    right: 15px;
 }
 
 .nav-link {
@@ -817,6 +902,7 @@ button.btn-book-header {
     margin-left: 10px;
     text-transform: capitalize;
 }
+
 button.btn.btn-book-header:hover {
     color: #ffffff;
     background-color: #b79a50;
@@ -844,6 +930,7 @@ a.fbw-qs--item.fbw-qs--search-btn {
 .fbw-qs--item-panel.fbw-qs--item-panel-calendar {
     padding: 15px;
 }
+
 .fbw-qs--item-panel--bottom {
     margin-top: 10px;
 }
@@ -873,7 +960,7 @@ td.fbw-calendar--day.day_out.valid_day.chosen_day {
     padding: 20px;
 }
 
-.footer-bottom > p {
+.footer-bottom>p {
     font-family: "Avenir-Light";
     font-style: normal;
     font-weight: 400;
@@ -1050,5 +1137,60 @@ h1#modalSubmitLabel {
         padding-bottom: 30px;
         margin-right: 30px;
         text-align: left;
+    }
+}
+
+/* Villa Slider Arrows */
+.slide-villa-home-wrapper {
+    position: relative;
+}
+
+.villa-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.villa-arrow:hover {
+    background: #a58639;
+    color: #fff;
+}
+
+.villa-arrow i {
+    font-size: 16px !important;
+}
+
+.villa-arrow-left {
+    left: -60px;
+}
+
+.villa-arrow-right {
+    right: -60px;
+}
+
+@media screen and (max-width: 480px) {
+    .villa-arrow {
+        width: 35px;
+        height: 35px;
+    }
+
+    .villa-arrow-left {
+        left: 5px;
+    }
+
+    .villa-arrow-right {
+        right: 5px;
     }
 }
