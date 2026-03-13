@@ -38,7 +38,7 @@
 
     <div class="container welcome my-md-5">
         <div class="content-greeting py-5">
-            <h3>Explore bali <br> whit Us</h3>
+            <h3>Explore bali <br> with Us</h3>
             <p class="pb-5">
                 From majestic mountainscapes to beautiful coastlines, breathtaking <br>
                 bali to explore and experience.

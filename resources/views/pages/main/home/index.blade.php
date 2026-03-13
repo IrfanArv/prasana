@@ -100,7 +100,7 @@
     <div class="home-sliders-wrapper">
         <div class="home-sliders">
             @foreach ($homeSlider->getMedia($mediaCollection) as $media)
-                <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column home-slider-img" style="cursor: pointer;">
             @endforeach
         </div>
         <button class="home-arrow home-arrow-left" aria-label="Previous">
@@ -318,16 +318,24 @@
             var galleryImages = [];
             var currentIndex = 0;
 
-            function buildGalleryImages() {
+            function buildImageGallery(selector) {
                 galleryImages = [];
-                $('.masonry-item').each(function() {
-                    galleryImages.push($(this).find('img').attr('src'));
+                $(selector).each(function() {
+                    galleryImages.push($(this).attr('src'));
                 });
             }
 
-            // Lightbox open
+            // Lightbox open (Gallery)
             $('.masonry-gallery').on('click', '.masonry-item img', function() {
-                buildGalleryImages();
+                buildImageGallery('.masonry-item img');
+                var src = $(this).attr('src');
+                currentIndex = galleryImages.indexOf(src);
+                showLightbox(currentIndex);
+            });
+
+            // Lightbox open (Home Slider)
+            $('.home-sliders').on('click', '.home-slider-img', function() {
+                buildImageGallery('.home-slider-img');
                 var src = $(this).attr('src');
                 currentIndex = galleryImages.indexOf(src);
                 showLightbox(currentIndex);
