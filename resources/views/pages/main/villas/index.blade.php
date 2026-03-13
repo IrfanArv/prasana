@@ -12,8 +12,9 @@
             @endforeach
         </div>
         <div class="slider-text-main">
-            <p class="animate__animated animate__fadeInUp">{{ $mainSlider->title }}</p>
+            <p class="animate__animated animate__fadeInUp">Our Villas</p>
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
+            <p class="animate__animated animate__fadeInRight">Each luxury villa features a private swimming pool and expansive living spaces, with accommodation ranging from stylish one-bedroom villas to generous three-bedroom sunrise pool villas. Thoughtfully designed to blend contemporary architecture with lush surroundings and uninterrupted privacy, many villas are positioned to capture breathtaking sunrise views and partial vistas of the Indian Ocean - creating memorable mornings enjoyed from private terraces and pools and defining the resort’s understated elegance.</p>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
             <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"

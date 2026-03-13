@@ -75,6 +75,7 @@
         <div class="slider-text-main">
             <p class="animate__animated animate__fadeInUp">{{ $mainSlider->title }}</p>
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
+            <p class="animate__animated animate__fadeInRight">Dining at Prasana is shaped by a thoughtful blend of creativity, quality and a sense of occasion, brought to life through two distinctive culinary experiences. Whim Bar & Restaurant offers contemporary Western and Asian flavours in an elegant open‑air setting, while Petit Garçon introduces a playful yet refined world of French‑inspired patisserie. Together, they create a dining journey that feels both elevated and effortlessly welcoming.</p>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
             <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"

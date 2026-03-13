@@ -572,7 +572,7 @@ img.img-fluid.img-villa-home {
 .slider-text-main {
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 40%;
     transform: translate(-50%, -50%);
     color: #fff;
     font-family: "Avenir";
@@ -1224,7 +1224,7 @@ h1#modalSubmitLabel {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     background: #fff;
     width: 100%;
     height: 100%;
@@ -1369,8 +1369,10 @@ h1#modalSubmitLabel {
         grid-column: span 2;
         grid-row: span 2;
     }
+
     .masonry-item:nth-child(8n+5) {
-        grid-column: span 1; /* Reset wide to normal */
+        grid-column: span 1;
+        /* Reset wide to normal */
     }
 
     .masonry-item {
@@ -1421,6 +1423,7 @@ h1#modalSubmitLabel {
         gap: 3px;
     }
 }
+
 .experience-arrow {
     position: absolute;
     top: 50%;
@@ -1461,15 +1464,15 @@ h1#modalSubmitLabel {
         width: 45px;
         height: 45px;
     }
-    
+
     .experience-arrow i {
         font-size: 18px !important;
     }
-    
+
     .experience-arrow-left {
         left: 5px;
     }
-    
+
     .experience-arrow-right {
         right: 5px;
     }

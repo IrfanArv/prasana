@@ -22,13 +22,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'our-villa' ? 'active' : null }}"
-                            href="{{ url('/our-villa') }}">Our Villa</a>
+                            href="{{ url('/our-villa') }}">Our Villas</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {{ Request::segment(1) === 'dinings' ? 'active' : null }}"
                             href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Dining
+                            Dining at Prasana
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ url('/dinings') }}">Whim</a></li>
@@ -41,7 +41,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'weddings' ? 'active' : null }}"
-                            href="{{ url('/weddings') }}">Wedding</a>
+                            href="{{ url('/weddings') }}">Weddings</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'offers' ? 'active' : null }}"

@@ -12,8 +12,9 @@
             @endforeach
         </div>
         <div class="slider-text-main">
-            <p class="animate__animated animate__fadeInUp">{{ $mainSlider->title }}</p>
+            <p class="animate__animated animate__fadeInUp">Weddings</p>
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
+            <p class="animate__animated animate__fadeInRight">Prasana also offers a serene setting for intimate weddings and for guests attending nearby celebrations. Spacious villas provide the ideal retreat for wedding parties, families, and friends seeking comfort and privacy before and after the festivities. Located close to renowned Uluwatu ceremony destinations such as <a href="https://tirtha.com/" target="_blank" style="color: #fff; text-decoration: underline;" rel="noopener noreferrer">Tirtha Bali</a> and <a href="https://www.oceanbaliweddings.com/" target="_blank" style="color: #fff; text-decoration: underline;" rel="noopener noreferrer">Ocean Wedding Chapel</a>, the resort ensures effortless access while elevating each celebration with refined service and thoughtful touches.</p>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
             <img src="{{ asset('/img/scrol.svg') }}" alt="scrol"
