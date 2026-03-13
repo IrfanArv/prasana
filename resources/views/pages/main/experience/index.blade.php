@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="book-home">
-        <div class="container">
+        <div class="container position-relative">
             <div class="row pb-5 experience">
                 @foreach ($data as $item)
                     <div class="col-md-4 item-slide-experiece">
@@ -64,6 +64,12 @@
                     </div>
                 @endforeach
             </div>
+            <button class="experience-arrow experience-arrow-left" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="experience-arrow experience-arrow-right" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 
@@ -82,8 +88,10 @@
             $('.experience').slick({
                 dots: true,
                 slidesToShow: 2,
-                // autoplay: true,
-                // autoplaySpeed: 3000,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: $('.experience-arrow-left'),
+                nextArrow: $('.experience-arrow-right'),
                 responsive: [{
                     breakpoint: 480,
                     settings: {

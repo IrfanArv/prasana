@@ -1421,3 +1421,56 @@ h1#modalSubmitLabel {
         gap: 3px;
     }
 }
+.experience-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.experience-arrow:hover {
+    background: #a58639;
+    color: #fff;
+}
+
+.experience-arrow i {
+    font-size: 24px !important;
+}
+
+.experience-arrow-left {
+    left: -30px;
+}
+
+.experience-arrow-right {
+    right: -30px;
+}
+
+@media screen and (max-width: 768px) {
+    .experience-arrow {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .experience-arrow i {
+        font-size: 18px !important;
+    }
+    
+    .experience-arrow-left {
+        left: 5px;
+    }
+    
+    .experience-arrow-right {
+        right: 5px;
+    }
+}
