@@ -152,34 +152,31 @@
         </div>
     </div>
 
-    <div class="container mt-md-5">
-        <div class="row">
-            <div class="col-md-4 p-md-5 p-4 d-flex flex-grow-1 justify-content-center align-items-center">
-                <div class="content-list">
-                    <div class="title">
-                        Gallery
+    <div class="container mt-md-5 mb-5">
+        <div class="masonry-gallery">
+            @foreach ($gallery as $item)
+                @foreach ($item->getMedia('photo') as $media)
+                    <div class="masonry-item">
+                        <img src="{{ asset($media->getUrl()) }}" alt="{{ $item->title }}" class="img-fluid" loading="lazy">
                     </div>
-                    <ul class="gallery mt-md-3">
-                        <li> <button class="btn item-gallery shadow-none active" data-filter="all"> All</button></li>
-                        @foreach ($gallery as $item)
-                            <li> <button class="btn item-gallery shadow-none" data-filter="{{ $item->title }}">
-                                    {{ $item->title }}</button></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-8 mb-5">
-                <div class="slide-gallery">
-                    @foreach ($gallery as $item)
-                        @foreach ($item->getMedia('photo') as $media)
-                            <div data-gallery="{{ $item->title }}">
-                                <img src="{{ asset($media->getUrl()) }}" class="img-fluid">
-                            </div>
-                        @endforeach
-                    @endforeach
-                </div>
-            </div>
+                @endforeach
+            @endforeach
         </div>
+    </div>
+
+    {{-- Lightbox --}}
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
     </div>
 
 
@@ -317,47 +314,60 @@
                     }
                 }]
             });
-            $('.slide-gallery').slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrow: false
+            // Lightbox
+            var galleryImages = [];
+            var currentIndex = 0;
+
+            function buildGalleryImages() {
+                galleryImages = [];
+                $('.masonry-item').each(function() {
+                    galleryImages.push($(this).find('img').attr('src'));
+                });
+            }
+
+            // Lightbox open
+            $('.masonry-gallery').on('click', '.masonry-item img', function() {
+                buildGalleryImages();
+                var src = $(this).attr('src');
+                currentIndex = galleryImages.indexOf(src);
+                showLightbox(currentIndex);
             });
 
-            // Gallery filter
-            $('.item-gallery').on('click', function() {
-                var filter = $(this).data('filter');
+            function showLightbox(index) {
+                if (index < 0 || index >= galleryImages.length) return;
+                currentIndex = index;
+                $('#lightboxImage').attr('src', galleryImages[currentIndex]);
+                $('#lightboxCounter').text((currentIndex + 1) + ' / ' + galleryImages.length);
+                $('#galleryLightbox').addClass('active');
+                $('body').css('overflow', 'hidden');
+            }
 
-                // Update active state
-                $('.item-gallery').removeClass('active');
-                $(this).addClass('active');
+            function closeLightbox() {
+                $('#galleryLightbox').removeClass('active');
+                $('body').css('overflow', '');
+            }
 
-                // Destroy current slick
-                if ($('.slide-gallery').hasClass('slick-initialized')) {
-                    $('.slide-gallery').slick('unslick');
+            $('#lightboxClose').on('click', closeLightbox);
+            $('#lightboxPrev').on('click', function() {
+                showLightbox((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+            });
+            $('#lightboxNext').on('click', function() {
+                showLightbox((currentIndex + 1) % galleryImages.length);
+            });
+
+            // Close on backdrop click
+            $('#galleryLightbox').on('click', function(e) {
+                if ($(e.target).is('#galleryLightbox') || $(e.target).is('.lightbox-content')) {
+                    closeLightbox();
                 }
+            });
 
-                // Show/hide slides based on filter
-                if (filter === 'all') {
-                    $('.slide-gallery > div').show();
-                } else {
-                    $('.slide-gallery > div').hide();
-                    $('.slide-gallery > div[data-gallery="' + filter + '"]').show();
-                }
-
-                // Reinitialize slick with visible slides
-                $('.slide-gallery').slick({
-                    dots: true,
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 3000,
-                    arrow: false
-                });
+            // Keyboard nav
+            $(document).on('keydown', function(e) {
+                if (!$('#galleryLightbox').hasClass('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') $('#lightboxPrev').click();
+                if (e.key === 'ArrowRight') $('#lightboxNext').click();
             });
         });
     </script>
