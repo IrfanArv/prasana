@@ -35,7 +35,7 @@ class MainController extends Controller
     {
         $mainSlider = PageSlider::where('pages', 'home')->first();
         $homeSlider = PageSlider::where('pages', 'home2')->first();
-        $villas = Villas::orderBy('id', 'DESC')->get();
+        $villas = Villas::orderBy('id', 'ASC')->get();
         $ratings = Rating::orderBy('id', 'DESC')->get();
         $gallery = Gallerie::orderBy('id', 'asc')->get();
         $slide = Gallerie::first();

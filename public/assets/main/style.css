@@ -441,7 +441,7 @@ ul.book {
 
 .content-greeting {
     font-family: "Avenir";
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-style: normal;
     width: 100%;
 }
