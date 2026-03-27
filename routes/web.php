@@ -19,6 +19,8 @@ use App\Http\Controllers\CMS\DiningController;
 use App\Http\Controllers\CMS\BlogController;
 use App\Http\Controllers\CMS\BlogCategoryController;
 use App\Http\Controllers\CMS\BlogTagController;
+use App\Http\Controllers\CMS\FaqController;
+use App\Http\Controllers\CMS\PropertyDetailController;
 
 Route::get('/foo', function () {
     Artisan::call('storage:link');
@@ -151,5 +153,15 @@ Route::group([
     Route::post('/blog-tag/store', [BlogTagController::class, 'store'])->name('blog-tag.store');
     Route::get('/blog-tag/edit/{id}', [BlogTagController::class, 'edit'])->name('blog-tag.edit');
     Route::get('/blog-tag/destroy/{id}', [BlogTagController::class, 'destroy'])->name('blog-tag.delete');
+    // faqs
+    Route::get('/faqs', [FaqController::class, 'index']);
+    Route::post('/faqs/store', [FaqController::class, 'store']);
+    Route::get('/faqs/edit/{id}', [FaqController::class, 'edit']);
+    Route::get('/faqs/destroy/{id}', [FaqController::class, 'destroy']);
+    // property details
+    Route::get('/property-details', [PropertyDetailController::class, 'index']);
+    Route::post('/property-details/store', [PropertyDetailController::class, 'store']);
+    Route::get('/property-details/edit/{id}', [PropertyDetailController::class, 'edit']);
+    Route::get('/property-details/destroy/{id}', [PropertyDetailController::class, 'destroy']);
 
 });

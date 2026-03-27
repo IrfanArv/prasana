@@ -152,17 +152,49 @@
         </div>
     </div>
 
-    <div class="container mt-md-5 mb-5">
-        <div class="masonry-gallery">
-            @foreach ($gallery as $item)
-                @foreach ($item->getMedia('photo') as $media)
-                    <div class="masonry-item">
-                        <img src="{{ asset($media->getUrl()) }}" alt="{{ $item->title }}" class="img-fluid" loading="lazy">
+    {{-- Property Details --}}
+    @if($propertyDetails->count())
+    <div class="container mt-5 mb-4">
+        <h4 class="accordion-section-title">PROPERTY DETAILS</h4>
+        <div class="accordion-prasana" id="propertyAccordion">
+            @foreach ($propertyDetails as $key => $detail)
+                <div class="accordion-prasana-item">
+                    <button class="accordion-prasana-btn" data-bs-toggle="collapse" data-bs-target="#property-{{ $detail->id }}" aria-expanded="false">
+                        <span>{{ $detail->title }}</span>
+                        <i class="fas fa-chevron-down accordion-prasana-icon"></i>
+                    </button>
+                    <div id="property-{{ $detail->id }}" class="collapse" data-bs-parent="#propertyAccordion">
+                        <div class="accordion-prasana-body">
+                            {!! $detail->content !!}
+                        </div>
                     </div>
-                @endforeach
+                </div>
             @endforeach
         </div>
     </div>
+    @endif
+
+    {{-- FAQ --}}
+    @if($faqs->count())
+    <div class="container mb-5">
+        <h4 class="accordion-section-title">FREQUENTLY ASKED QUESTIONS</h4>
+        <div class="accordion-prasana" id="faqAccordion">
+            @foreach ($faqs as $key => $faq)
+                <div class="accordion-prasana-item">
+                    <button class="accordion-prasana-btn" data-bs-toggle="collapse" data-bs-target="#faq-{{ $faq->id }}" aria-expanded="false">
+                        <span>{{ $faq->question }}</span>
+                        <i class="fas fa-chevron-down accordion-prasana-icon"></i>
+                    </button>
+                    <div id="faq-{{ $faq->id }}" class="collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-prasana-body">
+                            {!! $faq->answer !!}
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    @endif
 
     {{-- Lightbox --}}
     <div class="gallery-lightbox" id="galleryLightbox">
@@ -325,13 +357,7 @@
                 });
             }
 
-            // Lightbox open (Gallery)
-            $('.masonry-gallery').on('click', '.masonry-item img', function() {
-                buildImageGallery('.masonry-item img');
-                var src = $(this).attr('src');
-                currentIndex = galleryImages.indexOf(src);
-                showLightbox(currentIndex);
-            });
+
 
             // Lightbox open (Home Slider)
             $('.home-sliders').on('click', '.home-slider-img', function() {

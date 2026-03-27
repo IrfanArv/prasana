@@ -15,7 +15,7 @@ class SitemapController extends Controller
      */
     public function index(): Response
     {
-        $baseUrl = rtrim(config('app.url'), '/');
+        $baseUrl = url('/');
 
         $urls = [];
 

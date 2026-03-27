@@ -19,6 +19,8 @@ use App\Models\Setting;
 use App\Models\BlogPost;
 use App\Models\BlogCategory;
 use App\Models\BlogTag;
+use App\Models\Faq;
+use App\Models\PropertyDetail;
 
 class MainController extends Controller
 {
@@ -39,6 +41,8 @@ class MainController extends Controller
         $ratings = Rating::orderBy('id', 'DESC')->get();
         $gallery = Gallerie::orderBy('id', 'asc')->get();
         $slide = Gallerie::first();
+        $faqs = Faq::orderBy('sort_order', 'ASC')->get();
+        $propertyDetails = PropertyDetail::orderBy('sort_order', 'ASC')->get();
         return view('pages.main.home.index', [
             'mainSlider'        => $mainSlider,
             'slide' => $slide,
@@ -46,6 +50,8 @@ class MainController extends Controller
             'villas'            => $villas,
             'ratings'           => $ratings,
             'gallery'           => $gallery,
+            'faqs'              => $faqs,
+            'propertyDetails'   => $propertyDetails,
             'mediaCollection'   => $this->mediaCollection
         ]);
 

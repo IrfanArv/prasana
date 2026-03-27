@@ -110,6 +110,15 @@
             </li>
             @endcan
 
+            <li class=" nav-item {{ Request::segment(2) === 'faqs' ? 'active' : null }}"><a
+                    href="{{ url('/dashboard/faqs') }}"><i class="feather icon-help-circle"></i><span
+                        class="menu-title">FAQ</span></a>
+            </li>
+            <li class=" nav-item {{ Request::segment(2) === 'property-details' ? 'active' : null }}"><a
+                    href="{{ url('/dashboard/property-details') }}"><i class="feather icon-info"></i><span
+                        class="menu-title">Property Details</span></a>
+            </li>
+
             <li
                 class="nav-item has-sub {{ Request::segment(2) === 'blog' ? 'active' : null }} {{ Request::segment(2) === 'blog-category' ? 'active' : null }} {{ Request::segment(2) === 'blog-tag' ? 'active' : null }}">
                 <a href="#"><i class="feather icon-edit"></i><span class="menu-title">Blog</span></a>

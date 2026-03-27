@@ -4,22 +4,6 @@
 @section('meta_keyword', $settings->meta_keyword)
 @section('title', 'Experience - ')
 @section('content')
-    <style>
-        .slick-dotted.slick-slider {
-            margin-bottom: 30px;
-            margin-left: 520px;
-        }
-
-        .slick-dots {
-            display: none !important;
-        }
-
-        @media screen and (max-width: 480px) {
-            .slick-dotted.slick-slider {
-                margin-left: 0px;
-            }
-        }
-    </style>
     <div class="main-sliders">
         <div class="sliders">
             @foreach ($mainSlider->getMedia($mediaCollection) as $media)
@@ -45,31 +29,43 @@
             </p>
         </div>
     </div>
-    <div class="book-home">
-        <div class="container position-relative">
-            <div class="row pb-5 experience">
-                @foreach ($data as $item)
-                    <div class="col-md-4 item-slide-experiece">
-                        <div class="position-relative">
+
+    <div class="container welcome my-md-5">
+        <div class="row g-4">
+            @foreach ($data as $item)
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="products">
+                        @if ($item->image)
                             <img src="{{ asset('/img/experience/' . $item->image) }}" alt="{{ $item->title }}"
-                                class="img-fluid img-experience pe-5">
-                            <div class="title-inner @php if(strlen($item->title) >= 11) {echo 'experience-large';} @endphp">
-                                {!! $item->title !!}
+                                class="img-fluid img-products">
+                        @endif
+                        <div class="content-greeting">
+                            <h3 class="mt-3"> <a href="{{ route('experience.detail', ['slug' => $item->slug]) }}">
+                                    {!! $item->title !!}</a></h3>
+                            
+                            @if($item->location)
+                            <div class="mb-2 text-muted fw-bold" style="font-size: 0.9rem;">
+                                <i class="fas fa-map-marker-alt me-1"></i> {!! $item->location !!}
                             </div>
-                            <div class="loc-inner">
-                                {!! $item->location !!}
+                            @endif
+
+                            {!! Str::limit(strip_tags($item->description), 70) !!}
+
+                            <div class="row mt-2">
+                                <div class="col-md-6 d-flex justify-content-md-start justify-content-center p-0">
+                                    <a href="{{ route('experience.detail', ['slug' => $item->slug]) }}"
+                                        class="btn btn-full-info shadow-none">Full Info <i
+                                            class="fas fa-chevron-right"></i></a>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-md-end justify-content-center my-md-0 my-3 p-0 pe-md-3">
+                                    <a href="https://api.whatsapp.com/send?phone={{ $settings->wa_reciver }}&text=Hello%20Admin%20Prasana%20Resorts%20I%20would%20like%20to%20book%20a%20{!! Str::lower($item->title) !!}%20?"
+                                        target="_blank" class="btn btn-book-header shadow-none me-3 px-4">Book</a>
+                                </div>
                             </div>
-                            <a href="{{ route('experience.detail', ['slug' => $item->slug]) }}" class="btn-experience">Read More <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
-                @endforeach
-            </div>
-            <button class="experience-arrow experience-arrow-left" aria-label="Previous">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="experience-arrow experience-arrow-right" aria-label="Next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+                </div>
+            @endforeach
         </div>
     </div>
 
@@ -84,21 +80,6 @@
                 autoplay: true,
                 autoplaySpeed: 8000,
                 arrow: false
-            });
-            $('.experience').slick({
-                dots: true,
-                slidesToShow: 2,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                prevArrow: $('.experience-arrow-left'),
-                nextArrow: $('.experience-arrow-right'),
-                responsive: [{
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }]
             });
         });
     </script>

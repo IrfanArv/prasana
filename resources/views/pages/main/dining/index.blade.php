@@ -191,13 +191,13 @@
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
-    <div class="container-fluid p-0 h-100 mt-2" id="whim">
+    <!-- <div class="container-fluid p-0 h-100 mt-2" id="whim">
         <div class="slide-dining-1">
             @foreach ($data[0]->getMedia($mediaCollection) as $media)
                 <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column">
             @endforeach
         </div>
-    </div>
+    </div> -->
 
     {{-- ============================================== --}}
     {{-- WHIM BAR & RESTAURANT --}}

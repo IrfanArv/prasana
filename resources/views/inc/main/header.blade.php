@@ -22,18 +22,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'our-villa' ? 'active' : null }}"
-                            href="{{ url('/our-villa') }}">Our Villas</a>
+                            href="{{ url('/our-villa') }}">Villas</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ Request::segment(1) === 'dinings' ? 'active' : null }}"
-                            href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dining at Prasana
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ url('/dinings') }}">Whim</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/dinings') }}#petit">Petit Garçon</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) === 'dinings' ? 'active' : null }}"
+                            href="{{ url('/dinings') }}">Dining</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'menaka-spa' ? 'active' : null }}"
