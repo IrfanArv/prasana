@@ -55,6 +55,10 @@ img.img-fluid.img-products {
     max-width: 600px !important;
 }
 
+img#logoimage {
+    height: 100px;
+}
+
 form.row.form-subscribe {
     margin-left: 11rem;
 }
@@ -1015,6 +1019,10 @@ h1#modalSubmitLabel {
 }
 
 @media screen and (max-width: 480px) {
+    img#logoimage {
+        height: auto;
+    }
+
     iframe.chope {
         width: 350px !important;
     }
