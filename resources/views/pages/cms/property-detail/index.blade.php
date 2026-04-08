@@ -109,6 +109,7 @@
                 $('#btn-save-detail').val("create-detail");
                 $('#title').html("Add Property Detail");
                 $('#detailForm').trigger("reset");
+                $('#detail_id').val('');
                 $('#detail-modal').modal('show');
             });
 

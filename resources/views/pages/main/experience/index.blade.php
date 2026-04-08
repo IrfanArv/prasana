@@ -24,8 +24,7 @@
         <div class="content-greeting py-5">
             <h3>Explore bali <br> with Us</h3>
             <p class="pb-5">
-                From majestic mountainscapes to beautiful coastlines, breathtaking <br>
-                bali to explore and experience.
+               Set within a secluded and peaceful hillside enclave, Prasana places privacy and tranquillity at the forefront, offering an ideal retreat for honeymooners, couples, and families seeking respite from Bali’s busier tourist hubs. Despite its serene atmosphere, the resort enjoys a privileged position in the heart of Uluwatu, ensuring effortless access to the region’s most sought‑after beaches, surf breaks, cultural sites, and sunset destinations.
             </p>
         </div>
     </div>

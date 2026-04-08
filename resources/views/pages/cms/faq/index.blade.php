@@ -109,6 +109,7 @@
                 $('#btn-save').val("create-faq");
                 $('#title').html("Add FAQ");
                 $('#faqForm').trigger("reset");
+                $('#faq_id').val('');
                 $('#faq-modal').modal('show');
             });
 
