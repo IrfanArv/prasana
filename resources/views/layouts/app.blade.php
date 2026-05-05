@@ -46,40 +46,70 @@
 
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '580573388961615');
-    fbq('track', 'PageView');
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '580573388961615');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=580573388961615&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=580573388961615&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PCNNH4GM');</script>
-<!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PCNNH4GM');
+    </script>
+    <!-- End Google Tag Manager -->
 
-<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-T82TG8H2DY"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-T82TG8H2DY'); </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T82TG8H2DY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-T82TG8H2DY');
+    </script>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCNNH4GM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-T82TG8H2DY"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCNNH4GM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-T82TG8H2DY" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     @include('inc.main.header')
     @yield('content')
     @include('inc.main.footer')
@@ -115,14 +145,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         class="form-control" required>
                                 </div>
 
-                                <div class="form-group col-md-12 mt-3">
+                                {{-- <div class="form-group col-md-12 mt-3">
                                     <label>Country of Resindence</label>
                                     <select id="country-select" name="country" class="form-control"
                                         placeholder="Select a country" required>
                                         <option value="" disabled selected>Select country of resindence
                                         </option>
                                     </select>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
@@ -306,53 +336,88 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
     @stack('scripts')
 
-    @if(Route::is('villa') || Route::is('dining') || Route::is('spa') || Route::is('wedding') || Route::is('offers') || Route::is('experience') || Route::is('gallery') || Route::is('contact'))
+    @if (Route::is('villa') ||
+            Route::is('dining') ||
+            Route::is('spa') ||
+            Route::is('wedding') ||
+            Route::is('offers') ||
+            Route::is('experience') ||
+            Route::is('gallery') ||
+            Route::is('contact'))
         <!-- TRACKING -->
         <!-- Sojern Tag v6_js, Pixel Version: 10 -->
         <script src="https://static.sojern.com/utils/sjrn_autocx.js"></script>
         <script>
-          (function () {
-            /* Please fill the following values. */
-            var params = {
-              hd1: "", /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
-              hd2: "", /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
-              hc1: "", /* Destination City */
-              hs1: "", /* Destination State or Region */
-              hn1: "", /* Destination Country */
-              hpr: "", /* Hotel Property */
-              hr: "", /* Number of Rooms */
-              hsr: "", /* Hotel Star Rating */
-              hpid: "", /* Property ID */
-              t: "", /* Number of Travelers */
-              hp: "", /* Purchase Price */
-              hcu: "", /* Purchase Currency */
-              hconfno: "", /* Confirmation Number */
-              hdc: "", /* Discount Code */
-              sha256_eml: "", /* Hashed Email SHA256 */
-              sha1_eml: "", /* Hashed Email SHA1 */
-              md5_eml: "", /* Hashed Email MD5 */
-              ccid: "", /* Client Cookie id */
-              ffl: "" /* Loyalty Status */
-            };
+            (function() {
+                /* Please fill the following values. */
+                var params = {
+                    hd1: "",
+                    /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                    hd2: "",
+                    /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                    hc1: "",
+                    /* Destination City */
+                    hs1: "",
+                    /* Destination State or Region */
+                    hn1: "",
+                    /* Destination Country */
+                    hpr: "",
+                    /* Hotel Property */
+                    hr: "",
+                    /* Number of Rooms */
+                    hsr: "",
+                    /* Hotel Star Rating */
+                    hpid: "",
+                    /* Property ID */
+                    t: "",
+                    /* Number of Travelers */
+                    hp: "",
+                    /* Purchase Price */
+                    hcu: "",
+                    /* Purchase Currency */
+                    hconfno: "",
+                    /* Confirmation Number */
+                    hdc: "",
+                    /* Discount Code */
+                    sha256_eml: "",
+                    /* Hashed Email SHA256 */
+                    sha1_eml: "",
+                    /* Hashed Email SHA1 */
+                    md5_eml: "",
+                    /* Hashed Email MD5 */
+                    ccid: "",
+                    /* Client Cookie id */
+                    ffl: "" /* Loyalty Status */
+                };
 
-            /* Please do not modify the below code. */
-            try{params = Object.assign({}, sjrn_params, params);}catch(e){}
-            var cid = [];
-            var paramsArr = [];
-            var cidParams = [];
-            var pl = document.createElement('iframe');
-            var defaultParams = {"vid":"hot"};
-            for(key in defaultParams) { params[key] = defaultParams[key]; };
-            for(key in cidParams) { cid.push(params[cidParams[key]]); };
-            params.cid = cid.join('|');
-            for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
-            pl.type = 'text/html';
-            pl.setAttribute('style','height:0; width: 0; display:none;');
-            pl.async = true;
-            pl.src = 'https://static.sojern.com/cip/w/s?id=205885&f_v=v6_js&p_v=1&' +
-            paramsArr.join('&');
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
-          })();
+                /* Please do not modify the below code. */
+                try {
+                    params = Object.assign({}, sjrn_params, params);
+                } catch (e) {}
+                var cid = [];
+                var paramsArr = [];
+                var cidParams = [];
+                var pl = document.createElement('iframe');
+                var defaultParams = {
+                    "vid": "hot"
+                };
+                for (key in defaultParams) {
+                    params[key] = defaultParams[key];
+                };
+                for (key in cidParams) {
+                    cid.push(params[cidParams[key]]);
+                };
+                params.cid = cid.join('|');
+                for (key in params) {
+                    paramsArr.push(key + '=' + encodeURIComponent(params[key]))
+                };
+                pl.type = 'text/html';
+                pl.setAttribute('style', 'height:0; width: 0; display:none;');
+                pl.async = true;
+                pl.src = 'https://static.sojern.com/cip/w/s?id=205885&f_v=v6_js&p_v=1&' +
+                    paramsArr.join('&');
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+            })();
         </script>
         <!-- End Sojern Tag -->
     @endif
