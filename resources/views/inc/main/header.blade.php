@@ -24,9 +24,19 @@
                         <a class="nav-link {{ Request::segment(1) === 'our-villa' ? 'active' : null }}"
                             href="{{ url('/our-villa') }}">Villas</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::segment(1) === 'dinings' ? 'active' : null }}"
-                            href="{{ url('/dinings') }}">Dining</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ Request::segment(1) === 'dinings' ? 'active' : null }}"
+                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dining</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url('/dinings') }}">Dining Overview</a></li>
+                            <li><a class="dropdown-item" href="{{ asset('img/dining/whim-breakfast-menu.pdf') }}"
+                                    target="_blank" rel="noopener">Breakfast Menu</a></li>
+                            <li><a class="dropdown-item"
+                                    href="{{ asset('img/dining/whim-lunch-dinner-menu.pdf') }}" target="_blank"
+                                    rel="noopener">Lunch &amp; Dinner Menu</a></li>
+                            <li><a class="dropdown-item" href="{{ asset('img/dining/whim-beverage-menu.pdf') }}"
+                                    target="_blank" rel="noopener">Beverage Menu</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'menaka-spa' ? 'active' : null }}"

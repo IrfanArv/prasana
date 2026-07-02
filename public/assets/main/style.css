@@ -869,6 +869,13 @@ img.img-fluid.fit-slider {
     width: 215px;
 }
 
+@media (min-width: 768px) {
+    #menu-header .dropdown:hover > .dropdown-menu,
+    #menu-header .dropdown:focus-within > .dropdown-menu {
+        display: block;
+    }
+}
+
 a.dropdown-item {
     font-family: "Avenir-Light" !important;
     font-style: normal;
