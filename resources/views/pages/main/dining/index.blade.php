@@ -221,8 +221,12 @@
                             meticulously sources premium imported meats and locally grown Balinese produce to craft
                             contemporary dishes with a refined sense of place.</p>
                         <div class="btn-group-dining">
-                            <a href="{{ asset('img/dining/In House Breakfast.pdf') }}" target="_blank"
-                                class="btn btn-book-header ms-0">Our Menu</a>
+                            <a href="{{ asset('img/dining/whim-breakfast-menu.pdf') }}" target="_blank"
+                                rel="noopener" class="btn btn-book-header ms-0">Breakfast Menu</a>
+                            <a href="{{ asset('img/dining/whim-lunch-dinner-menu.pdf') }}" target="_blank"
+                                rel="noopener" class="btn btn-book-header ms-0">Lunch &amp; Dinner Menu</a>
+                            <a href="{{ asset('img/dining/whim-beverage-menu.pdf') }}" target="_blank"
+                                rel="noopener" class="btn btn-book-header ms-0">Beverage Menu</a>
                             <a href="@php echo $data[0]->url @endphp" target="_blank"
                                 class="btn btn-book-header ms-0">Reserve Your Table</a>
                         </div>
