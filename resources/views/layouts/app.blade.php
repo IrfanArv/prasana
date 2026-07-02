@@ -2,24 +2,31 @@
 <html>
 
 <head>
+    @php
+        $cleanMeta = function ($value) {
+            return trim(preg_replace('/\s+/', ' ', html_entity_decode(strip_tags($value), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+        };
+        $metaTitle = $cleanMeta($__env->yieldContent('meta_title'));
+        $metaDescription = $cleanMeta($__env->yieldContent('meta_desc'));
+    @endphp
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="robots" content="index, follow" />
-    <meta name="title" content="@yield('meta_title')" />
-    <meta name="description" content="@yield('meta_desc')">
+    <meta name="title" content="{{ $metaTitle }}" />
+    <meta name="description" content="{{ $metaDescription }}">
     <meta name="author" content="Era Digital Media">
     <meta name="keywords" content="@yield('meta_keyword')" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="@yield('meta_title')" />
+    <meta property="og:title" content="{{ $metaTitle }}" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:image" content="@yield('meta_image', secure_url(asset('img/new-welcome.png')))" />
     <meta property="og:image:secure_url" content="@yield('meta_image', secure_url(asset('img/new-welcome.png')))" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="@yield('meta_title')" />
-    <meta property="og:description" content="@yield('meta_desc')" />
+    <meta property="og:site_name" content="{{ $metaTitle }}" />
+    <meta property="og:description" content="{{ $metaDescription }}" />
     <title>@yield('title')Prasana by Arjani Resorts</title>
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon/favicon.ico') }}">
