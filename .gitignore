@@ -20,3 +20,4 @@ server.php
 artisan
 /storage
 img/
+.agents
