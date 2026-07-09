@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-6 p-0">
                 <img src="{{ asset('/img/new-welcome.png') }}" class="content-image-welcome img-fluid"
-                    alt="welcome to prasana by arjani resort">
+                    alt="welcome to Prasana Villas Uluwatu">
             </div>
             <div
                 class="col-md-6 p-1 ps-4 d-flex flex-grow-1 justify-content-center align-items-center order-first order-md-last">
@@ -31,7 +31,14 @@
                     <h2 data-aos="fade-left" data-aos-duration="1000">Prasana</h2>
                     <h4 data-aos="fade-left" data-aos-duration="1000">by arjani resort</h4>
                     <p class="pe-md-5 pe-3" data-aos="fade-down" data-aos-duration="1000">
-                       A serene cliff‑front sanctuary of all‑villa luxury in Bali’s tranquil Uluwatu, Prasana by Arjani Resorts offers an elevated retreat where contemporary design, personalised service and cultural immersion come together seamlessly. Guided by a philosophy of Simplicity, Purity and Sincerity, the resort blends private pool villas, immersive wellness experiences and distinctive dining at Whim restaurant with the French‑inspired artistry of Petit Garçon, appealing to couples, honeymooners, families and discerning travellers, as well as those seeking an exceptional setting for intimate weddings and curated group celebrations. The result is a refined balance of elevated luxury, holistic wellbeing and meaningful connection.
+                        A serene cliff‑front sanctuary of all‑villa luxury in Bali’s tranquil Uluwatu, Prasana Villas
+                        Uluwatus offers an elevated retreat where contemporary design, personalised service and cultural
+                        immersion come together seamlessly. Guided by a philosophy of Simplicity, Purity and Sincerity, the
+                        resort blends private pool villas, immersive wellness experiences and distinctive dining at Whim
+                        restaurant with the French‑inspired artistry of Petit Garçon, appealing to couples, honeymooners,
+                        families and discerning travellers, as well as those seeking an exceptional setting for intimate
+                        weddings and curated group celebrations. The result is a refined balance of elevated luxury,
+                        holistic wellbeing and meaningful connection.
                     </p>
                 </div>
             </div>
@@ -41,7 +48,8 @@
         <div class="book-home">
             <div class="row content-book">
                 <div class="col-md-6">
-                    <div class="title-book mt-5" data-aos="fade-down" data-aos-duration="1000">BOOK DIRECT WITH PRASANA</div>
+                    <div class="title-book mt-5" data-aos="fade-down" data-aos-duration="1000">BOOK DIRECT WITH PRASANA
+                    </div>
                     <ul class="book" data-aos="fade-down" data-aos-duration="1000">
                         <li>Best rate guarantee</li>
                         <li>One-way airport transfer</li>
@@ -54,7 +62,7 @@
                 </div>
                 <div class="col-md-6 d-flex flex-grow-1 justify-content-center align-items-center mt-md-5">
                     <div id="fb-widget-1" class="fb-widget" data-fbConfig="0"></div>
-                    <script class="fb-widget-config" data-fbConfig="0" type="application/json">{"params":[{"currency":"IDR","locale":"en_GB","pricesDisplayMode":"normal","offerComputeRule":"lowerMinstay","maxAdults":6,"maxChildren":2,"mainColor":"#b0a06c","themeDark":false,"openFrontInNewTab":true,"property":"idbal31631","title":"Prasana By Arjani Resorts","childrenMaxAge":12,"quicksearch":{"layout":"2","border":"border","layersDirection":"down-left","showAccessCode":true,"showChildrenAges":false,"trackingCode":""},"fbWidget":"Quicksearch"}],"commonParams":{"redirectUrl":"https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml","showPropertiesList":false,"demoMode":false,"allowGroupSelection":false},"propertyIndex":0,"version":"1.46.0","baseHost":"websdk.fastbooking-services.com"}</script>
+                    <script class="fb-widget-config" data-fbConfig="0" type="application/json">{"params":[{"currency":"IDR","locale":"en_GB","pricesDisplayMode":"normal","offerComputeRule":"lowerMinstay","maxAdults":6,"maxChildren":2,"mainColor":"#b0a06c","themeDark":false,"openFrontInNewTab":true,"property":"idbal31631","title":"Prasana Villas Uluwatus","childrenMaxAge":12,"quicksearch":{"layout":"2","border":"border","layersDirection":"down-left","showAccessCode":true,"showChildrenAges":false,"trackingCode":""},"fbWidget":"Quicksearch"}],"commonParams":{"redirectUrl":"https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml","showPropertiesList":false,"demoMode":false,"allowGroupSelection":false},"propertyIndex":0,"version":"1.46.0","baseHost":"websdk.fastbooking-services.com"}</script>
                     <link rel="stylesheet" property="stylesheet" href="//websdk.fastbooking-services.com/widgets/app.css">
                     <script type="text/javascript" src="//websdk.fastbooking-services.com/widgets/app.js"></script>
                 </div>
@@ -68,7 +76,8 @@
                     @foreach ($villas as $villa)
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-6 p-md-5 p-3 d-flex flex-grow-1 justify-content-center align-items-center">
+                                <div
+                                    class="col-md-6 p-md-5 p-3 d-flex flex-grow-1 justify-content-center align-items-center">
                                     <div class="content-greeting text-md-end ps-md-5">
                                         <h5 class="d-none d-md-block">villas</h5>
                                         <h3>{!! $villa->name !!}</h3>
@@ -100,7 +109,8 @@
     <div class="home-sliders-wrapper">
         <div class="home-sliders">
             @foreach ($homeSlider->getMedia($mediaCollection) as $media)
-                <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column home-slider-img" style="cursor: pointer;">
+                <img src="{{ asset($media->getUrl()) }}" class="img-fluid image-two-column home-slider-img"
+                    style="cursor: pointer;">
             @endforeach
         </div>
         <button class="home-arrow home-arrow-left" aria-label="Previous">
@@ -142,7 +152,7 @@
                 </div>
             </div>
             <div class="col-md-4 px-4 px-md-3">
-                <img src="{{ asset('/img/kutip.svg') }}" class="img-fluid" alt="welcome to prasana by arjani resort">
+                <img src="{{ asset('/img/kutip.svg') }}" class="img-fluid" alt="welcome to Prasana Villas Uluwatu">
                 <div class="quotes-home">
                     The Best And Recommended Places
                 </div>
@@ -153,47 +163,49 @@
     </div>
 
     {{-- Property Details --}}
-    @if($propertyDetails->count())
-    <div class="container mt-5 mb-4">
-        <h4 class="accordion-section-title">PROPERTY DETAILS</h4>
-        <div class="accordion-prasana" id="propertyAccordion">
-            @foreach ($propertyDetails as $key => $detail)
-                <div class="accordion-prasana-item">
-                    <button class="accordion-prasana-btn" data-bs-toggle="collapse" data-bs-target="#property-{{ $detail->id }}" aria-expanded="false">
-                        <span>{{ $detail->title }}</span>
-                        <i class="fas fa-chevron-down accordion-prasana-icon"></i>
-                    </button>
-                    <div id="property-{{ $detail->id }}" class="collapse" data-bs-parent="#propertyAccordion">
-                        <div class="accordion-prasana-body">
-                            {!! $detail->content !!}
+    @if ($propertyDetails->count())
+        <div class="container mt-5 mb-4">
+            <h4 class="accordion-section-title">PROPERTY DETAILS</h4>
+            <div class="accordion-prasana" id="propertyAccordion">
+                @foreach ($propertyDetails as $key => $detail)
+                    <div class="accordion-prasana-item">
+                        <button class="accordion-prasana-btn" data-bs-toggle="collapse"
+                            data-bs-target="#property-{{ $detail->id }}" aria-expanded="false">
+                            <span>{{ $detail->title }}</span>
+                            <i class="fas fa-chevron-down accordion-prasana-icon"></i>
+                        </button>
+                        <div id="property-{{ $detail->id }}" class="collapse" data-bs-parent="#propertyAccordion">
+                            <div class="accordion-prasana-body">
+                                {!! $detail->content !!}
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
     @endif
 
     {{-- FAQ --}}
-    @if($faqs->count())
-    <div class="container mb-5">
-        <h4 class="accordion-section-title">FREQUENTLY ASKED QUESTIONS</h4>
-        <div class="accordion-prasana" id="faqAccordion">
-            @foreach ($faqs as $key => $faq)
-                <div class="accordion-prasana-item">
-                    <button class="accordion-prasana-btn" data-bs-toggle="collapse" data-bs-target="#faq-{{ $faq->id }}" aria-expanded="false">
-                        <span>{{ $faq->question }}</span>
-                        <i class="fas fa-chevron-down accordion-prasana-icon"></i>
-                    </button>
-                    <div id="faq-{{ $faq->id }}" class="collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-prasana-body">
-                            {!! $faq->answer !!}
+    @if ($faqs->count())
+        <div class="container mb-5">
+            <h4 class="accordion-section-title">FREQUENTLY ASKED QUESTIONS</h4>
+            <div class="accordion-prasana" id="faqAccordion">
+                @foreach ($faqs as $key => $faq)
+                    <div class="accordion-prasana-item">
+                        <button class="accordion-prasana-btn" data-bs-toggle="collapse"
+                            data-bs-target="#faq-{{ $faq->id }}" aria-expanded="false">
+                            <span>{{ $faq->question }}</span>
+                            <i class="fas fa-chevron-down accordion-prasana-icon"></i>
+                        </button>
+                        <div id="faq-{{ $faq->id }}" class="collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-prasana-body">
+                                {!! $faq->answer !!}
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
     @endif
 
     {{-- Lightbox --}}

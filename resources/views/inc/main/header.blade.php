@@ -1,9 +1,9 @@
 <header>
     <nav id="header" class="navbar navbar-expand-md fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand ms-3" href="{{ url('/') }}" title="Prasana by Arjani Resort" rel="home">
+            <a class="navbar-brand ms-3" href="{{ url('/') }}" title="Prasana Villas Uluwatu" rel="home">
                 <img id="logoimage" class="img-fluid" src="{{ asset('/img/whitelogo.svg') }}"
-                    alt="Prasana by Arjani Resort" />
+                    alt="Prasana Villas Uluwatu" />
             </a>
             <a href="https://www.book-secure.com/index.php?s=results&amp;property=idbal31631&amp;arrival=2022-08-22&amp;departure=2022-08-23&amp;adults1=2&amp;children1=0&amp;locale=en_GB&amp;currency=IDR&amp;stid=e3bukzedt&amp;arrivalDateValue=2022-08-22&amp;fromyear=2022&amp;frommonth=8&amp;fromday=22&amp;nbdays=2&amp;nbNightsValue=2&amp;redir=BIZ-so5523q0o4&amp;Clusternames=ASIAIDHTLPrasanaByAr&amp;rt=1661163722&amp;connectName=ASIAIDHTLPrasanaByAr&amp;cname=ASIAIDHTLPrasanaByAr&amp;Hotelnames=Asia-Id-Prasana-By-Arjani-Resorts&amp;hname=Asia-Id-Prasana-By-Arjani-Resorts&amp;cluster=ASIAIDHTLPrasanaByAr"
                 target="_blank" class="btn btn-book-header-mobile d-block d-md-none">Book Now</a>
@@ -31,9 +31,8 @@
                             <li><a class="dropdown-item" href="{{ url('/dinings') }}">Dining Overview</a></li>
                             <li><a class="dropdown-item" href="{{ asset('img/dining/whim-breakfast-menu.pdf') }}"
                                     target="_blank" rel="noopener">Breakfast Menu</a></li>
-                            <li><a class="dropdown-item"
-                                    href="{{ asset('img/dining/whim-lunch-dinner-menu.pdf') }}" target="_blank"
-                                    rel="noopener">Lunch &amp; Dinner Menu</a></li>
+                            <li><a class="dropdown-item" href="{{ asset('img/dining/whim-lunch-dinner-menu.pdf') }}"
+                                    target="_blank" rel="noopener">Lunch &amp; Dinner Menu</a></li>
                             <li><a class="dropdown-item" href="{{ asset('img/dining/whim-beverage-menu.pdf') }}"
                                     target="_blank" rel="noopener">Beverage Menu</a></li>
                         </ul>

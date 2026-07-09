@@ -6,9 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Prasana By Arjani Resorts CMS">
+    <meta name="description" content="Prasana Villas Uluwatus CMS">
     <meta name="author" content="Webly.id">
-    <title>Login CMS - Prasana by Arjani Resorts</title>
+    <title>Login CMS - Prasana Villas Uluwatus</title>
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon/favicon.ico') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
@@ -51,15 +51,16 @@
                                                 <h4 class="mb-0">Hi! Welcome</h4>
                                             </div>
                                         </div>
-                                        <p class="px-2">CMS Prasana by Arjani Resorts</p>
+                                        <p class="px-2">CMS Prasana Villas Uluwatus</p>
                                         <div class="card-content">
                                             <div class="card-body pt-1">
                                                 <form method="POST" action="{{ route('login') }}">
                                                     @csrf
                                                     <fieldset
                                                         class="form-label-group form-group position-relative has-icon-left">
-                                                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                                                            placeholder="Email" name="email"
+                                                        <input type="email"
+                                                            class="form-control @error('email') is-invalid @enderror"
+                                                            id="email" placeholder="Email" name="email"
                                                             value="{{ old('email') }}" required autocomplete="email"
                                                             autofocus>
                                                         <div class="form-control-position">
@@ -69,8 +70,10 @@
                                                     </fieldset>
 
                                                     <fieldset class="form-label-group position-relative has-icon-left">
-                                                        <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                                            id="password" name="password" required autocomplete="current-password" placeholder="Password">
+                                                        <input type="password"
+                                                            class="form-control @error('password') is-invalid @enderror"
+                                                            id="password" name="password" required
+                                                            autocomplete="current-password" placeholder="Password">
                                                         <div class="form-control-position">
                                                             <i class="feather icon-lock"></i>
                                                         </div>
@@ -110,18 +113,18 @@
                                                         </div>
                                                     @enderror
                                                     @error('password')
-                                                    <div class="alert alert-danger alert-dismissible fade show"
-                                                        role="alert">
-                                                        <p class="mb-0">
-                                                            {{ $message }}
-                                                        </p>
-                                                        <button type="button" class="close" data-dismiss="alert"
-                                                            aria-label="Close">
-                                                            <span aria-hidden="true"><i
-                                                                    class="feather icon-x-circle"></i></span>
-                                                        </button>
-                                                    </div>
-                                                @enderror
+                                                        <div class="alert alert-danger alert-dismissible fade show"
+                                                            role="alert">
+                                                            <p class="mb-0">
+                                                                {{ $message }}
+                                                            </p>
+                                                            <button type="button" class="close" data-dismiss="alert"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true"><i
+                                                                        class="feather icon-x-circle"></i></span>
+                                                            </button>
+                                                        </div>
+                                                    @enderror
                                                 </form>
                                             </div>
                                         </div>
