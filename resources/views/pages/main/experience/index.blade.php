@@ -15,16 +15,27 @@
             <h1 class="animate__animated animate__fadeInLeft"> {!! $mainSlider->sub_title !!}</h1>
         </div>
         <button id="scrol" class="scrol-main btn btn-transparent shadow-none">
-            <img src="{{ asset('/img/scrol.svg' )}}" alt="scrol"
+            <img src="{{ asset('/img/scrol.svg') }}" alt="scrol"
                 class="img-fluid animate__animated animate__bounceIn  animate__infinite animate__slower">
         </button>
     </div>
 
     <div class="container welcome my-md-5">
         <div class="content-greeting py-5">
-            <h3>Explore bali <br> with Us</h3>
+            <h3>Experiences at Prasana Villas Uluwatu</h3>
             <p class="pb-5">
-               Set within a secluded and peaceful hillside enclave, Prasana places privacy and tranquillity at the forefront, offering an ideal retreat for honeymooners, couples, and families seeking respite from Bali’s busier tourist hubs. Despite its serene atmosphere, the resort enjoys a privileged position in the heart of Uluwatu, ensuring effortless access to the region’s most sought‑after beaches, surf breaks, cultural sites, and sunset destinations.
+                t Prasana Villas Uluwatu, every moment is designed to feel meaningful, personal, and beautifully connected
+                to the spirit of Bali. Our curated collection of experiences invites you to slow down, explore, and
+                indulge—whether through immersive cultural encounters, refined culinary journeys, or serene wellness rituals
+                set against Uluwatu’s dramatic natural landscape.
+                From hands‑on Balinese cooking classes and golden‑hour degustation dinners at Whim Bar & Restaurant, to
+                tranquil yoga sessions, sound‑healing ceremonies, and artisanal Petit Garçon dessert rituals, each
+                experience is thoughtfully crafted to enrich your stay with authenticity and artistry.
+                Venture beyond your villa to discover iconic beaches, world‑class surf breaks, clifftop temples, and
+                exclusive nightlife partnerships, or retreat inward with private in‑villa dining, floating breakfasts, and
+                bespoke romantic celebrations.
+                Every experience at Prasana is an invitation—to connect, to savour, and to create unforgettable memories in
+                one of Bali’s most captivating destinations.
             </p>
         </div>
     </div>
@@ -41,11 +52,11 @@
                         <div class="content-greeting">
                             <h3 class="mt-3"> <a href="{{ route('experience.detail', ['slug' => $item->slug]) }}">
                                     {!! $item->title !!}</a></h3>
-                            
-                            @if($item->location)
-                            <div class="mb-2 text-muted fw-bold" style="font-size: 0.9rem;">
-                                <i class="fas fa-map-marker-alt me-1"></i> {!! $item->location !!}
-                            </div>
+
+                            @if ($item->location)
+                                <div class="mb-2 text-muted fw-bold" style="font-size: 0.9rem;">
+                                    <i class="fas fa-map-marker-alt me-1"></i> {!! $item->location !!}
+                                </div>
                             @endif
 
                             {!! Str::limit(strip_tags($item->description), 70) !!}
@@ -56,7 +67,8 @@
                                         class="btn btn-full-info shadow-none">Full Info <i
                                             class="fas fa-chevron-right"></i></a>
                                 </div>
-                                <div class="col-md-6 d-flex justify-content-md-end justify-content-center my-md-0 my-3 p-0 pe-md-3">
+                                <div
+                                    class="col-md-6 d-flex justify-content-md-end justify-content-center my-md-0 my-3 p-0 pe-md-3">
                                     <a href="https://api.whatsapp.com/send?phone={{ $settings->wa_reciver }}&text=Hello%20Admin%20Prasana%20Resorts%20I%20would%20like%20to%20book%20a%20{!! Str::lower($item->title) !!}%20?"
                                         target="_blank" class="btn btn-book-header shadow-none me-3 px-4">Book</a>
                                 </div>

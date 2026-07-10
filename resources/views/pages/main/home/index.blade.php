@@ -29,10 +29,10 @@
                 <div class="content-greeting">
                     <h5 data-aos="fade-down" data-aos-duration="1000">Welcome To</h5>
                     <h2 data-aos="fade-left" data-aos-duration="1000">Prasana</h2>
-                    <h4 data-aos="fade-left" data-aos-duration="1000">by arjani resort</h4>
+                    <h4 data-aos="fade-left" data-aos-duration="1000">Villas Uluwatu</h4>
                     <p class="pe-md-5 pe-3" data-aos="fade-down" data-aos-duration="1000">
                         A serene cliff‑front sanctuary of all‑villa luxury in Bali’s tranquil Uluwatu, Prasana Villas
-                        Uluwatus offers an elevated retreat where contemporary design, personalised service and cultural
+                        Uluwatu offers an elevated retreat where contemporary design, personalised service and cultural
                         immersion come together seamlessly. Guided by a philosophy of Simplicity, Purity and Sincerity, the
                         resort blends private pool villas, immersive wellness experiences and distinctive dining at Whim
                         restaurant with the French‑inspired artistry of Petit Garçon, appealing to couples, honeymooners,
