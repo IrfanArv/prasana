@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('meta_title', isset($pageTitle) ? $pageTitle . ' - Prasana Villas Uluwatus' : 'Blog - Prasana Villas Uluwatus')
-@section('meta_desc', 'Latest news, stories and updates from Prasana Villas Uluwatus')
+@section('meta_title', isset($pageTitle) ? $pageTitle . ' - Prasana Villas Uluwatu' : 'Blog - Prasana Villas Uluwatu')
+@section('meta_desc', 'Latest news, stories and updates from Prasana Villas Uluwatu')
 @section('meta_keyword', 'prasana blog, bali resort blog, arjani resorts news')
 @section('title', isset($pageTitle) ? $pageTitle . ' - ' : 'Blog - ')
 @section('content')

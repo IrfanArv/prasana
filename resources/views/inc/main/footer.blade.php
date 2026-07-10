@@ -26,7 +26,7 @@
 
                     {{-- Address Section --}}
                     <div class="footer-info-section">
-                        <h4 class="footer-brand-name">Prasana Villas Uluwatus Official</h4>
+                        <h4 class="footer-brand-name">Prasana Villas Uluwatu Official</h4>
                         <p class="footer-brand-tagline">A Secluded Haven in Bali</p>
 
                         <div class="footer-address">

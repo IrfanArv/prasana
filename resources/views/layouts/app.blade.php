@@ -29,7 +29,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="{{ $metaTitle }}" />
     <meta property="og:description" content="{{ $metaDescription }}" />
-    <title>@yield('title')Prasana Villas Uluwatus</title>
+    <title>@yield('title')Prasana Villas Uluwatu</title>
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon/favicon.ico') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">

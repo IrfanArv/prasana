@@ -181,7 +181,7 @@
 
                         <p
                             style="font-size: 12px; line-height: 12px; font-family: 'Helvetica', Arial, sans-serif; font-weight: normal; text-decoration: none; color: #000000;">
-                            This Email Generate on website Prasana Villas Uluwatus
+                            This Email Generate on website Prasana Villas Uluwatu
                         </p>
 
 
