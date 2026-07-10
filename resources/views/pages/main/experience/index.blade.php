@@ -24,7 +24,7 @@
         <div class="content-greeting py-5">
             <h3>Experiences at Prasana Villas Uluwatu</h3>
             <p class="pb-5">
-                t Prasana Villas Uluwatu, every moment is designed to feel meaningful, personal, and beautifully connected
+                At Prasana Villas Uluwatu, every moment is designed to feel meaningful, personal, and beautifully connected
                 to the spirit of Bali. Our curated collection of experiences invites you to slow down, explore, and
                 indulge—whether through immersive cultural encounters, refined culinary journeys, or serene wellness rituals
                 set against Uluwatu’s dramatic natural landscape.
