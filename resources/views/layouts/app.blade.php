@@ -80,27 +80,8 @@
             src="https://www.facebook.com/tr?id=580573388961615&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PCNNH4GM');
-    </script>
-    <!-- End Google Tag Manager -->
-
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T82TG8H2DY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZXQ4C564G"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -108,17 +89,13 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-        gtag('config', 'G-T82TG8H2DY');
+        gtag('config', 'G-HZXQ4C564G');
     </script>
+
+
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCNNH4GM" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-T82TG8H2DY" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     @include('inc.main.header')
     @yield('content')
     @include('inc.main.footer')
